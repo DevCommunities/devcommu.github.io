@@ -1,55 +1,49 @@
 import Typewriter from "typewriter-effect";
 interface Iprops {
-    className?: string
+  className?: string;
 }
 export default function Coolbanner(props: Iprops) {
-    return (
-        <div className={props.className ?? ""}>
-            <div className="text-5xl text-right">
-                <h1 className='pt-5'>
-                    <span className="underline" id="title">DevCommu</span>
-                    <span>คือ</span>
-                </h1>
-                <h1 className="pt-5 flex flex-row flex-wrap justify-end">
-                    <span className="underline text-red-600" >
-                        <Typewriter
-                            options={{
-                                strings: ['คอมมูนิตี้', 'โรงเรียน', 'แคมป์'],
-                                autoStart: true,
-                                loop: true,
-                                delay: 200,
-                                deleteSpeed: 10,
-                            }}
-                        />
-                    </span>
-                    <span>สำหรับ</span>
-                </h1>
-                <h1 className="pt-5 flex flex-row flex-wrap justify-end">
-                    <span className="underline text-green-400" >
-                        <Typewriter
-                            options={{
-                                strings: ['นักเรียน', 'โปรแกรมเมอร์', 'คนชอบคอม', 'คนอยากทำเว็บ', 'คนชอบไอที', 'คนอยากทำ AI'],
-                                autoStart: true,
-                                loop: true,
-                                delay: 100,
-                                deleteSpeed: 100,
-                            }}
-                        />
-                    </span>
-                    <span>เพื่อ</span>
-                    <span className="underline text-violet-600" >
-                        <Typewriter
-                            options={{
-                                strings: ['เรียนรู้', 'ทำโปรเจ็ค', 'เจอเพื่อน'],
-                                autoStart: true,
-                                loop: true,
-                                delay: 50,
-                                deleteSpeed: 100,
-                            }}
-                        />
-                    </span>
-                </h1>
-            </div>
-        </div>
-    )
+  return (
+    <div className={props.className ?? ""}>
+      <div className="text-right text-5xl">
+        <h1 className="flex flex-row flex-wrap justify-start pt-5">
+          <span>ที่ๆคนชอบ&nbsp;</span>
+          <span className="text-emerald-500 underline">
+            <Typewriter
+              options={{
+                strings: ["เขียนโปรแกรม", "ทำเอไอ", "เทคโนโลยี"],
+                autoStart: true,
+                loop: true,
+                delay: 200,
+                deleteSpeed: 10,
+              }}
+            />
+          </span>
+        </h1>
+        <h1 className="flex flex-row flex-wrap justify-start pt-5">
+          <span>มาเจอกันเพื่อ&nbsp;</span>
+          <span className="text-fuchsia-400 underline">
+            <Typewriter
+              options={{
+                strings: ["พัฒนาตนเอง", "เรียนรู้", "ทำโปรเจ็ค", "เจอเพื่อน"],
+                autoStart: true,
+                loop: true,
+                delay: 50,
+                deleteSpeed: 100,
+              }}
+            />
+          </span>
+        </h1>
+      </div>
+      <p className="mt-4">
+        เราเชื่อว่าความรู้ด้านเทคโนโลยีจะเป็นรากฐาน ของการพัฒนาประเทศในอนาคต
+        เราจึงมุ่งมั่นในการสร้างฐาน
+        ความรู้ทางด้านเทคโนโลยีควบคู่ไปกับการจัดการสอนแบบ Project based
+        learningให้กับโรงเรียนและเยาวชนทั่วไป
+      </p>
+      <button className="mt-4 w-2/5 rounded border-b-4 border-gray-700 bg-gray-500 px-4 py-2 font-bold text-white hover:border-gray-500 hover:bg-gray-400">
+        สนใจจัดกิจกรรมอบรม
+      </button>
+    </div>
+  );
 }
