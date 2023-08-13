@@ -16,12 +16,6 @@ const images_list = [
 export default function HomeCarosel(props: IProps) {
   return (
     <Carousel className={props.className}>
-      {/* <Image
-        src={"/home/camp1.jpg"}
-        width={1200}
-        height={1200}
-        alt="DevCommu"
-      /> */}
       {images_list.map((image, index) => {
         return (
           <Image

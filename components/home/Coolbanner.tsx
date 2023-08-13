@@ -5,7 +5,7 @@ interface Iprops {
 export default function Coolbanner(props: Iprops) {
   return (
     <div className={props.className ?? ""}>
-      <div className="text-right text-5xl">
+      <div className="text-right text-2xl sm:text-5xl">
         <h1 className="flex flex-row flex-wrap justify-start pt-5">
           <span>ที่ๆคนชอบ&nbsp;</span>
           <span className="text-emerald-500 underline">
