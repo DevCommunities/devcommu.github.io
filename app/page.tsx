@@ -1,10 +1,9 @@
 "use client";
 import "./globals.css";
 import DefaultNavbar from "@/components/Navbar";
-import Image from "next/image";
 import { useState } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
-import Typewriter from "typewriter-effect";
+import Image from "next/image";
 import Coolbanner from "@/components/home/Coolbanner";
 import HomeCarosel from "@/components/home/Carosel";
 import HomeCards from "@/components/home/HomeCard";
@@ -56,8 +55,39 @@ export default function Home() {
             ผ่าน Project Based Learning"
         />
       </div>
-      <section className="min-h mt-12 min-h-screen bg-white px-0 md:px-56">
-        <h1>dadad</h1>
+      <section className="min-h mt-12 bg-white px-0 pb-28 md:px-28">
+        <section className="mx-0 mt-10 flex flex-wrap p-2 md:grid md:grid-cols-2 md:gap-4">
+          {/* cneter vertical */}
+          <div className="mt-16">
+            <div className="justify-center self-center text-left font-kanit text-4xl md:mx-16 md:my-10">
+              “ได้ลองทำโปรเจคที่อยากทำ
+              <span>
+                <br></br>โดยมีพี่ๆคอยซัพพอร์ต
+              </span>
+              <span>
+                <br></br>ทำให้การทำโปรเจคต์ไม่น่ากลัว”
+              </span>
+            </div>
+            <div className="pl-14 pr-28 text-left font-kanit text-lg">
+              ทันรวี คำแหงพล
+              <span>
+                <br></br>นักเรียนในโครงการความร่วมมือระหว่าง DEVCOMMU
+              </span>
+              <span>
+                <br></br>และโรงเรียนนวมินทร์ทราชูทิศ สตรีวิทยา2
+              </span>
+            </div>
+          </div>
+          <div className="mt-4 flex justify-center self-center md:mx-16">
+            <Image
+              src="/home/reviews/sun.webp"
+              className="h-96 w-96 items-center rounded-full"
+              width={1200}
+              height={1200}
+              alt="reviewer profile"
+            />
+          </div>
+        </section>
       </section>
     </main>
   );
