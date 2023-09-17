@@ -5,9 +5,6 @@
  **/
 const nextConfig = {
     output: "export",
-
-    basePath: "/DevCommunities.github.io",
-
     images: {
         unoptimized: true,
     },
