@@ -11,7 +11,6 @@ const images_list = [
   "/home/camp2.jpg",
   "/home/camp1.jpg",
   "/home/camp4.jpg",
-
 ];
 
 export default function HomeCarosel(props: IProps) {
@@ -24,7 +23,7 @@ export default function HomeCarosel(props: IProps) {
             src={image}
             width={1500}
             height={3000}
-            className="rounded mx-8 md:h-[400px]"
+            className="rounded md:h-[400px]"
             alt="Carosel Image"
           />
         );
