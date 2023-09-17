@@ -34,7 +34,7 @@ export default function DeafaultNavbar(props: NavbarProps) {
     },
   ];
   return (
-    <Navbar fluid={true} rounded={true} className="bg-white font-kanit">
+    <Navbar fluid={true} rounded={true} className="bg-white font-kanit mx-10 my-6">
       <Navbar.Brand href="https://flowbite.com/">
         <Image src={"/devcommu.png"} width={120} height={120} alt="DevCommu" />
       </Navbar.Brand>
@@ -46,7 +46,7 @@ export default function DeafaultNavbar(props: NavbarProps) {
               key={index}
               href={page.nav}
               active={props.current_page === page.name}
-              className="text-lg"
+              className="text-lg "
             >
               {page.name}
             </Navbar.Link>

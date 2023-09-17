@@ -6,11 +6,12 @@ interface IProps {
 }
 
 const images_list = [
-  "/home/camp1.jpg",
-  "/home/camp2.jpg",
-  "/home/camp3.jpg",
-  "/home/camp4.jpg",
   "/home/camp5.jpg",
+  "/home/camp3.jpg",
+  "/home/camp2.jpg",
+  "/home/camp1.jpg",
+  "/home/camp4.jpg",
+
 ];
 
 export default function HomeCarosel(props: IProps) {
@@ -21,9 +22,9 @@ export default function HomeCarosel(props: IProps) {
           <Image
             key={index}
             src={image}
-            width={1200}
-            height={2400}
-            className="rounded-sm"
+            width={1500}
+            height={3000}
+            className="rounded mx-8 md:h-[400px]"
             alt="Carosel Image"
           />
         );

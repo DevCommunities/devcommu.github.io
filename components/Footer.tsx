@@ -7,7 +7,7 @@ export default function DefaultFooter() {
         <ul className="mb-2 mt-2 flex justify-center gap-6 md:gap-8">
           <li>
             <a
-              href="/"
+              href="https://www.youtube.com/@devcommu"
               rel="noreferrer"
               target="_blank"
               className="text-gray-700 transition hover:text-gray-700/75"
@@ -31,7 +31,7 @@ export default function DefaultFooter() {
 
           <li>
             <a
-              href="/"
+              href="https://github.com/DevCommunities"
               rel="noreferrer"
               target="_blank"
               className="text-gray-700 transition hover:text-gray-700/75"
@@ -43,7 +43,7 @@ export default function DefaultFooter() {
 
           <li>
             <a
-              href="/"
+              href="https://web.facebook.com/DevCommu/"
               rel="noreferrer"
               target="_blank"
               className="text-gray-700 transition hover:text-gray-700/75"
