@@ -1,0 +1,12 @@
+---
+import React from 'react';
+import DarkModelToggle from '~/components/button/DarkmodeToggle.astro';
+import NavContainer from '~/components/global/nav/NavComponents';
+import { NavListContainer } from '~/components/global/nav/NavComponents';
+---
+
+<NavContainer>
+    <NavListContainer>
+        <DarkModelToggle client:load/>
+    </NavListContainer>
+</NavContainer>

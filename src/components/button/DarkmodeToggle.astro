@@ -1,0 +1,14 @@
+---
+import { DarkModeToggle } from "./Toggle";
+---
+
+<DarkModeToggle
+  OnToggle={(isDarkMode) => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }}
+  client:only="react"
+/>
