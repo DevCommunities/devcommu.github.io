@@ -1,6 +1,6 @@
 ---
 import HomePageComponent from "./HomePageComponent";
-import { VideoExample, MoreDetail } from "./HomePageComponent";
+import { VideoExample, MoreDetail, FeedBack } from "./HomePageComponent";
 ---
 
 <section class="bg-secondary p-8 text-center rounded-md">
@@ -11,5 +11,6 @@ import { VideoExample, MoreDetail } from "./HomePageComponent";
     text3={"มาเจอกันเพื่อพัฒนาตนเเอง"}
   />
   <VideoExample />
-  <MoreDetail />
+  <MoreDetail client:load />
+  <FeedBack client:load />
 </section>
