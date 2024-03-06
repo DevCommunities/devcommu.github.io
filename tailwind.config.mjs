@@ -6,6 +6,7 @@ export default {
 	theme: {
 		fontFamily: {
 			lineSansTH: ['LINESeedSansTH', ...defaultTheme.fontFamily.sans],
+			lineSansTH_XB: ['LINESeedSansTHXB', ...defaultTheme.fontFamily.sans],
 		  },
 		extend: {
 			colors: {

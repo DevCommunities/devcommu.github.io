@@ -1,14 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
+import HomePage from "../components/homepage/HomePage.astro";
 ---
 
 <Layout title="DevCommu">
-  <main class="min-h-full bg-isabelline">
+  <main class="min-h-full bg-isabelline bg-secondary">
     <section class="container mx-auto py-8 px-4 sm:px-0">
-      <section class="bg-white p-8 text-center rounded-md">
-        <a class="hover:underline text-2xl" href={`/products/`}
-          >Explore Stuff</a
-        >
+      <HomePage />
+      <section class="bg-secondary min-h-[100vh] p-8 text-center rounded-md">
       </section>
     </section>
   </main>

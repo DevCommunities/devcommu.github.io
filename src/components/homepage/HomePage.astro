@@ -1,0 +1,15 @@
+---
+import HomePageComponent from "./HomePageComponent";
+import { VideoExample, MoreDetail } from "./HomePageComponent";
+---
+
+<section class="bg-secondary p-8 text-center rounded-md">
+  <HomePageComponent
+    client:load
+    text1={"ที่ๆคนชอบ"}
+    text2={"เทคโนโลยี"}
+    text3={"มาเจอกันเพื่อพัฒนาตนเเอง"}
+  />
+  <VideoExample />
+  <MoreDetail />
+</section>
