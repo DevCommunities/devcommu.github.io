@@ -20,36 +20,38 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
   console.log(side2.get());
 
   return (
-    <section className="mt-20">
-      <div className=" h-4 max-w-80 bg-no-repeat mb-6 mx-auto bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
-      <section className="font-lineSansTH_XB text-[60px]">
-        <h1>
-          {text1} <span className="text-primary"> {text2}</span>
-        </h1>
-        <h1>{text3}</h1>
-      </section>
-      <motion.button
-        whileHover={{ scale: 1.04 }}
-        className="h-10 p-auto px-7 font-lineSansTH font-bold text-white bg-primary rounded-full my-5 hover:bg-[#c96380] transition-colors duration-200
+    <section>
+      <section className="mt-20">
+        <div className=" h-4 max-w-80 bg-no-repeat mb-6 mx-auto bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
+        <section className="font-lineSansTH_XB text-[60px]">
+          <h1>
+            {text1} <span className="text-primary"> {text2}</span>
+          </h1>
+          <h1>{text3}</h1>
+        </section>
+        <motion.button
+          whileHover={{ scale: 1.04 }}
+          className="h-10 p-auto px-7 font-lineSansTH font-bold text-white bg-primary rounded-full my-5 hover:bg-[#c96380] transition-colors duration-200
       "
-      >
-        {" "}
-        สนใจจัดกิจกรรม
-      </motion.button>
+        >
+          {" "}
+          สนใจจัดกิจกรรม
+        </motion.button>
 
-      {/*SideBar effect Scrolling */}
-      <motion.section
-        style={{ x: side1 }}
-        className={`fixed top-[13%] w-[50%] h-96  bg-20 bg-[url('/images/keyboard1.png')] bg-contain bg-no-repeat`}
-      ></motion.section>
-      <motion.section
-        style={{ x: side2 }}
-        className={`fixed top-[25%] h-96 w-full bg-20 bg-[url('/images/arduino1.png')] bg-contain bg-no-repeat`}
-      ></motion.section>
-      <motion.section
-        style={{ x: side3 }}
-        className={`fixed top-[20%] h-20 w-full bg-20 bg-[url('/images/python.png')] bg-contain bg-no-repeat`}
-      ></motion.section>
+        {/*SideBar effect Scrolling */}
+        <motion.section
+          style={{ x: side1 }}
+          className={`fixed top-[13%] w-[50%] h-96  bg-20 bg-[url('/images/keyboard1.png')] bg-contain bg-no-repeat`}
+        ></motion.section>
+        <motion.section
+          style={{ x: side2 }}
+          className={`fixed top-[25%] h-96 w-full bg-20 bg-[url('/images/arduino1.png')] bg-contain bg-no-repeat`}
+        ></motion.section>
+        <motion.section
+          style={{ x: side3 }}
+          className={`fixed top-[20%] h-20 w-full bg-20 bg-[url('/images/python.png')] bg-contain bg-no-repeat`}
+        ></motion.section>
+      </section>
     </section>
   );
 }

@@ -38,7 +38,7 @@ export default function NavContainer({
 
 export function NavListContainer({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center space-x-2 ">
       {children ? children : null}
       <div className="flex space-x-1 bg-[#E2E8F0] rounded-full px-2 py-1">
         {/* Assuming you want these to be links */}
