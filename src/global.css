@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'LINESeedSansTH';
+    src: url('/fonts/LINESeedSansTH_W_Th.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+div {
+    background-color: black;
+}

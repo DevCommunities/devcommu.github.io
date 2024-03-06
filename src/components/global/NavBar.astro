@@ -1,12 +1,21 @@
 ---
-import React from 'react';
-import DarkModelToggle from '~/components/button/DarkmodeToggle.astro';
-import NavContainer from '~/components/global/nav/NavComponents';
-import { NavListContainer } from '~/components/global/nav/NavComponents';
+import React from "react";
+import DarkModelToggle from "~/components/button/DarkmodeToggle.astro";
+import NavContainer from "~/components/global/nav/NavComponents";
+import { NavListContainer } from "~/components/global/nav/NavComponents";
 ---
 
+<style is:global>
+  @font-face {
+    font-family: "LINESeedSansTH";
+    src: url("/fonts/LINESeedSansTH_W_Rg.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
 <NavContainer>
-    <NavListContainer>
-        <DarkModelToggle client:load/>
-    </NavListContainer>
+  <NavListContainer>
+    <DarkModelToggle client:load />
+  </NavListContainer>
 </NavContainer>

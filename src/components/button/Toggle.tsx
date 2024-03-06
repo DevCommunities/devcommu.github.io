@@ -28,7 +28,7 @@ export default function BaseToggle({ OnToggle }: BaseToggleProps) {
 export function DarkModeToggle({ OnToggle }: BaseToggleProps) {
     return (
         <div className="flex items-center space-x-2">
-            <FaCloudSun className={`text-2xl text-yellow-400 dark:text-black`} />
+            <FaCloudSun className={`text-2xl text-yellow-400 dark:text-black transition-colors duration-300`} />
             <BaseToggle OnToggle={
                 (isDark) => {
                     if (isDark) {

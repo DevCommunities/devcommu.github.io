@@ -1,7 +1,23 @@
 import React from 'react';
 
+
+type Data = {
+    title:String,
+    href:String, //incase using href
+    nowAt:boolean
+}[]
+
+
+const data : Data = [
+    {title:"หน้าหลัก",href : "",nowAt:true},
+    {title:"โครงการ",href : "",nowAt:false},
+    {title:"สถานะ",href : "",nowAt:false},
+    {title:"เกี่ยวกับเรา",href : "",nowAt:false},
+]
+
 export default function NavContainer({ children }: { children: React.ReactNode }) {
     return (
+        
         <nav className="bg-white shadow">
             <div className="container mx-auto px-6 py-3 flex justify-between items-center">
                 <div className="flex items-center">
@@ -23,12 +39,11 @@ export function NavListContainer({ children }: { children: React.ReactNode }) {
     return (
         <div className="flex items-center space-x-2">
             {children ? children : null}
-            <div className="flex space-x-1">
+            <div className="flex space-x-1 bg-[#E2E8F0] rounded-full px-2 py-1">
                 {/* Assuming you want these to be links */}
-                <a href="#" className="text-gray-800 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium" style={{ transition: 'color 0.3s' }}>หน้าหลัก</a>
-                <a href="#" className="text-gray-800 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium" style={{ transition: 'color 0.3s' }}>โครงการ</a>
-                <a href="#" className="text-gray-800 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium" style={{ transition: 'color 0.3s' }}>สถานะ</a>
-                <a href="#" className="text-gray-800 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium" style={{ transition: 'color 0.3s' }}>เกี่ยวกับเรา</a>
+                {data.map((item) =>(
+                    <a href="#" className={`text-gray-800 hover:text-pink-500 0 px-3 py-2 font-lineSansTH  rounded-full  text-sm font-medium ${item.nowAt ? "bg-white" : ""}`} style={{ transition: 'color 0.3s' }}>{item.title}</a>
+                ))}
             </div>
         </div>
     );
