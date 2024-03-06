@@ -42,8 +42,9 @@ export function NavListContainer({ children }: { children: React.ReactNode }) {
       {children ? children : null}
       <div className="flex space-x-1 bg-[#E2E8F0] rounded-full px-2 py-1">
         {/* Assuming you want these to be links */}
-        {data.map((item) => (
+        {data.map((item, idx) => (
           <a
+            key={idx}
             href="#"
             className={`text-gray-800 hover:text-pink-500 0 px-3 py-2 font-lineSansTH  rounded-full  text-sm font-medium ${item.nowAt ? "bg-white" : ""}`}
             style={{ transition: "color 0.3s" }}
