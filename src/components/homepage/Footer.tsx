@@ -57,7 +57,7 @@ export default function Footer() {
         style={{ y: side5 }}
         className={`fixed top-[3%] left-[47%]  h-[20%] w-full bg-20 bg-[url('/images/footer/macTerminal.png')] bg-contain bg-no-repeat`}
       ></motion.section>
-      <section className="flex justify-between items-center mb-5">
+      <section className="flex justify-between items-center pb-5">
         <div className="h-24 w-32  mx-5   bg-[url('images/footer/pagename.png')] bg-no-repeat bg-center bg-contain"></div>
         <div className="flex mx-5 items-center">
           <a
