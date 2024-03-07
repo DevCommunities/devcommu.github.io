@@ -4,13 +4,18 @@ interface BaseToggleProps {
     OnToggle?: (isToggled: boolean) => void;
 }
 export default function BaseToggle({ OnToggle }: BaseToggleProps) {
+    // check if the toggle is on or off by get tailwind class dark get theme
+    const isToggled = localStorage.getItem('theme') === 'dark';
+    if (isToggled) {
+        document.documentElement.classList.add('dark');
+    }
     return (
         // animated toggle switch
         <label
-            htmlFor="AcceptConditions"
+            htmlFor="DarkTrigger"
             className="relative h-8 w-14 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-primary"
         >
-            <input type="checkbox" id="AcceptConditions" className="peer sr-only"
+            <input type="checkbox" id="DarkTrigger" className="peer sr-only" defaultChecked={isToggled}
                 onClick={(e: React.MouseEvent<HTMLInputElement>) => {
                     if (OnToggle) {
                         OnToggle(e.currentTarget.checked);
@@ -32,8 +37,10 @@ export function DarkModeToggle({ OnToggle }: BaseToggleProps) {
             <BaseToggle OnToggle={
                 (isDark) => {
                     if (isDark) {
+                        localStorage.setItem('theme', 'dark');
                         document.documentElement.classList.add('dark');
                     } else {
+                        localStorage.setItem('theme', 'light');
                         document.documentElement.classList.remove('dark');
                     }
                 }

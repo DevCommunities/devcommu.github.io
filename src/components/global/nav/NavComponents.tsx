@@ -19,10 +19,10 @@ export default function NavContainer({
   children: React.ReactNode;
 }) {
   return (
-    <nav className="bg-secondary shadow fixed w-full ">
+    <nav className="bg-secondary shadow fixed w-full dark:bg-dark-primary z-50">
       <div className="  mx-auto w-full px-6 py-3 flex justify-between items-center">
         <div className="flex items-center">
-          <div className="text-purple-600">
+          <div className="">
             <img
               src="/favicon.svg"
               alt="logo"

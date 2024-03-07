@@ -1,6 +1,6 @@
 ---
 import React from "react";
-import { ViewTransitions } from "astro:transitions";
+import { ViewTransitions, fade } from "astro:transitions";
 import DarkModelToggle from "~/components/button/DarkmodeToggle.astro";
 import NavContainer from "~/components/global/nav/NavComponents";
 import { NavListContainer } from "~/components/global/nav/NavComponents";
@@ -21,9 +21,8 @@ import { NavListContainer } from "~/components/global/nav/NavComponents";
     font-style: normal;
   }
 </style>
-<NavContainer>
+<NavContainer transition:animate="fade">
   <NavListContainer pathName={Astro.url.pathname} client:load>
-    <DarkModelToggle client:only="react" />
+    <DarkModelToggle/>
   </NavListContainer>
 </NavContainer>
-<ViewTransitions />
