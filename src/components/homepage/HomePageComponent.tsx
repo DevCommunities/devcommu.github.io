@@ -20,7 +20,7 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
   console.log(side2.get());
 
   return (
-    <section>
+    <section id="Home">
       <section className="mt-20">
         <div className=" h-4 max-w-80 bg-no-repeat mb-6 mx-auto bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
         <section className="font-lineSansTH_XB text-[60px]">
@@ -31,8 +31,7 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
         </section>
         <motion.button
           whileHover={{ scale: 1.04 }}
-          className="h-10 p-auto px-7 font-lineSansTH font-bold text-white bg-primary rounded-full my-5 hover:bg-[#c96380] transition-colors duration-200
-      "
+          className="h-10 p-auto px-7 font-lineSansTH font-bold text-white bg-primary rounded-full my-5 hover:bg-[#c96380] transition-colors duration-200"
         >
           {" "}
           สนใจจัดกิจกรรม

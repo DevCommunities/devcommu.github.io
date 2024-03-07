@@ -15,6 +15,9 @@ export default function Footer() {
 
   const handleClickScrollHome = () => {
     const element = document.getElementById("Home");
+    const keycap_sound = new Audio("/sounds/keypress.mp3");
+    keycap_sound.play();
+
     if (element) {
       // 👇 Will scroll smoothly to the top of the next section
       element.scrollIntoView({ behavior: "smooth" });
@@ -29,7 +32,8 @@ export default function Footer() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           className=" mx-auto  h-36 w-36 bg-[url('/images/footer/DevKey.png')] bg-contain bg-no-repeat bg-center"
-        ></motion.button>
+        >
+        </motion.button>
         <section className="font-lineSansTH font-bold text-[60px]">
           <h1>สนใจกิจกรรมหรอ?</h1>
           <h1 className="text-primary">
