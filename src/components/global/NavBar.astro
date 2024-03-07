@@ -1,5 +1,6 @@
 ---
 import React from "react";
+import { ViewTransitions } from "astro:transitions";
 import DarkModelToggle from "~/components/button/DarkmodeToggle.astro";
 import NavContainer from "~/components/global/nav/NavComponents";
 import { NavListContainer } from "~/components/global/nav/NavComponents";
@@ -11,7 +12,6 @@ import { NavListContainer } from "~/components/global/nav/NavComponents";
     src: url("/fonts/LINESeedSansTH_W_Rg.woff") format("woff");
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
   }
 
   @font-face {
@@ -19,11 +19,11 @@ import { NavListContainer } from "~/components/global/nav/NavComponents";
     src: url("/fonts/LINESeedSansTH_W_XBd.woff") format("woff");
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
   }
 </style>
 <NavContainer>
-  <NavListContainer client:load>
+  <NavListContainer pathName={Astro.url.pathname} client:load>
     <DarkModelToggle client:load />
   </NavListContainer>
 </NavContainer>
+<ViewTransitions />
