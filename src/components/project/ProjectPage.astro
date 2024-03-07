@@ -1,0 +1,18 @@
+---
+import ProjectPageComponent from "./ProjectPageComponent";
+import { SlidingProjects } from "./ProjectPageComponent";
+---
+
+<section class="bg-secondary pl-8 pt-8 pr-8 text-center rounded-md min-h-screen">
+  <ProjectPageComponent
+    text1={"รับจัดอบรมแบบ"}
+    text2={"Project Based Learning"}
+    text3={"ทั้งแบบองกรณ์และแบบส่วนตัวทั่วประเทศ"}
+    buttonText={"ร่วมเรียนรู้ไปกับเรา"}
+    client:load
+  />
+  <SlidingProjects
+    className="mt-12 cursor-pointer"
+    client:only="react"
+  />
+</section>
