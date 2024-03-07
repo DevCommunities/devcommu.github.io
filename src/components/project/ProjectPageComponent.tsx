@@ -59,7 +59,7 @@ export interface Project {
 
 export function SlidingProjects({ className }: { className?: string }) {
     return (
-        <Marquee gradient={false} speed={50} pauseOnHover={true} className={className}>
+        <Marquee gradient={false} speed={50} pauseOnHover={true} className={`w-screen ${className ?? ""}`}>
             {OursProjects?.map((project, index) => (
                 <motion.div
                     key={index}
@@ -72,6 +72,6 @@ export function SlidingProjects({ className }: { className?: string }) {
                 </motion.div>
             ))
             }
-        </Marquee >
+        </Marquee>
     );
 }
