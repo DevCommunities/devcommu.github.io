@@ -9,8 +9,8 @@ type Data = {
 const data: Data = [
   { title: "หน้าหลัก", href: "/" },
   { title: "โครงการ", href: "/project" },
-  { title: "สถานะ", href: "" },
-  { title: "เกี่ยวกับเรา", href: "" },
+  { title: "สถานะ", href: "/status" },
+  { title: "เกี่ยวกับเรา", href: "/about" },
 ];
 
 export default function NavContainer({
@@ -49,7 +49,7 @@ export function NavListContainer({ children, pathName }: { children: React.React
             key={idx}
             href={item.href.toString()}
             className={`text-gray-800 hover:text-pink-500 transition-all duration-300 0 px-3 py-2 font-lineSansTH  rounded-full   text-sm font-medium ${(
-              item.href === currentPath
+              currentPath.endsWith(item.href.toString())
             ) ? "bg-white" : ""}`}
           >
             {item.title}
