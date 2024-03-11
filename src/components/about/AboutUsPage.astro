@@ -1,0 +1,20 @@
+---
+import AboutUsPageComponent from "./AboutUsPageComponent";
+import {
+  MaskEffectDevCommu,
+  TextDetail,
+  SlidingPeople,
+} from "./AboutUsPageComponent";
+import Footer from "../homepage/Footer";
+---
+
+<header class="bg-secondary pl-8 pt-8 pr-8 text-center rounded-md">
+  <section class="container mx-auto pt-8 px-4 sm:px-0">
+    <AboutUsPageComponent text1={"เกี่ยวกับเรา"} />
+    <MaskEffectDevCommu client:load />
+    <TextDetail />
+    <SlidingPeople client:only="react" />
+  </section>
+
+  <Footer client:visible />
+</header>

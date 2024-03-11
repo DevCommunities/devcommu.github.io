@@ -36,7 +36,13 @@ export default function NavContainer({
   );
 }
 
-export function NavListContainer({ children, pathName }: { children: React.ReactNode, pathName: string }) {
+export function NavListContainer({
+  children,
+  pathName,
+}: {
+  children: React.ReactNode;
+  pathName: string;
+}) {
   // get current path
   const currentPath = pathName;
   return (
@@ -48,9 +54,11 @@ export function NavListContainer({ children, pathName }: { children: React.React
           <a
             key={idx}
             href={item.href.toString()}
-            className={`text-gray-800 hover:text-pink-500 transition-all duration-300 0 px-3 py-2 font-lineSansTH  rounded-full   text-sm font-medium ${(
+            className={`text-gray-800 hover:text-pink-500 px-3 py-2 font-lineSansTH  rounded-full   text-sm font-medium ${
               currentPath.endsWith(item.href.toString())
-            ) ? "bg-white" : ""}`}
+                ? "bg-white"
+                : "bg-[#E2E8F0]"
+            }`}
           >
             {item.title}
           </a>
