@@ -138,9 +138,13 @@ export function TextDetail() {
 
 export function PeopleCard(props: { people: AboutUs }) {
   return (
-    <section className="flex flex-col space-y-3">
+    <section className="flex flex-col space-y-3 mb-10">
       {props.people.people.map((people, index) => (
-        <div key={index} className="w-full h-[15rem] p-5  flex space-x-5">
+        <motion.div
+          key={index}
+          whileHover={{ scale: 1.1 }}
+          className="w-full h-[15rem] p-5  flex space-x-5"
+        >
           <div
             className={`h-full w-48 bg-cover bg-center rounded-lg`}
             style={{ backgroundImage: `url(${people.img})` }}
@@ -157,7 +161,7 @@ export function PeopleCard(props: { people: AboutUs }) {
               <p className="mt-3">{people.description}</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </section>
   );
@@ -169,7 +173,7 @@ export function SlidingPeople() {
       gradient={false}
       speed={50}
       pauseOnHover={true}
-      className={`w-screen mb-80`}
+      className={`w-screen mb-32 mt-16`}
     >
       {About?.map((people, index) => (
         <motion.div
