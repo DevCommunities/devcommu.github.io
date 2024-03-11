@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "../../utils/cn";
 
 import { About } from "~/data/data";
@@ -19,6 +19,14 @@ export interface AboutUs {
 }
 
 export default function AboutUsPageComponent(props: AboutUsPageComponentProps) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+  });
+  const side1 = useTransform(scrollYProgress, [0, 1], ["-40%", "-150%"]);
+  const side2 = useTransform(scrollYProgress, [0, 1], ["83%", "130%"]);
+  const side3 = useTransform(scrollYProgress, [0, 1], ["86%", "120%"]);
   const { text1 } = props;
   return (
     <section className="mt-20">
@@ -26,6 +34,18 @@ export default function AboutUsPageComponent(props: AboutUsPageComponentProps) {
       <section className="font-lineSansTH_XB text-[60px]">
         <h1>{text1}</h1>
       </section>
+      <motion.section
+        style={{ x: side1 }}
+        className={`fixed top-[13%] w-[50%] h-96  bg-20 bg-[url('/images/keyboard1.png')] bg-contain bg-no-repeat`}
+      ></motion.section>
+      <motion.section
+        style={{ x: side2 }}
+        className={`fixed top-[25%] h-96 w-full bg-20 bg-[url('/images/arduino1.png')] bg-contain bg-no-repeat`}
+      ></motion.section>
+      <motion.section
+        style={{ x: side3 }}
+        className={`fixed top-[20%] h-20 w-full bg-20 bg-[url('/images/python.png')] bg-contain bg-no-repeat`}
+      ></motion.section>
     </section>
   );
 }
