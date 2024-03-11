@@ -1,4 +1,4 @@
-import {type Project } from '~/components/project/ProjectPageComponent' 
+import {type Project,type SlideProjectProps } from '~/components/project/ProjectPageComponent' 
 import {type AboutUs} from '~/components/about/AboutUsPageComponent'
 export const OursProjects: Project[] = [
     {
@@ -74,3 +74,69 @@ export const About :AboutUs[] = [
         },]
     },
 ]
+
+export const SlideProjectList : SlideProjectProps[] = [
+    {
+        title:"ค่าย DevCommu ครั้งที่ 3 Make AI Drive Your Dream",
+        type:"AI BOOTCAMP",
+        image:"/images/project/camp/DevCommu3_AIBootCamp.png",
+        description:""
+    },{
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"DATA BOOTCAMP",
+        image:"/images/project/camp/DevCommu_DataBootCamp.png",
+        description:""
+    },{
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"PYTHON BOOTCAMP",
+        image:"/images/project/camp/DevCommu_PythonBootCamp.png",
+        description:""
+    },{
+        title:"ค่าย DevCommu ครั้งที่ 3 Make AI Drive Your Dream",
+        type:"AI BOOTCAMP",
+        image:"/images/project/camp/DevCommu3_AIBootCamp.png",
+        description:""
+    },{
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"DATA BOOTCAMP",
+        image:"/images/project/camp/DevCommu_DataBootCamp.png",
+        description:""
+    },{
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"PYTHON BOOTCAMP",
+        image:"/images/project/camp/DevCommu_PythonBootCamp.png",
+        description:""
+    },{
+        title:"ค่าย DevCommu ครั้งที่ 3 Make AI Drive Your Dream",
+        type:"AI BOOTCAMP",
+        image:"/images/project/camp/DevCommu3_AIBootCamp.png",
+        description:""
+    },{
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"DATA BOOTCAMP",
+        image:"/images/project/camp/DevCommu_DataBootCamp.png",
+        description:""
+    },{
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"PYTHON BOOTCAMP",
+        image:"/images/project/camp/DevCommu_PythonBootCamp.png",
+        description:""
+    },{
+        title:"ค่าย DevCommu ครั้งที่ 3 Make AI Drive Your Dream",
+        type:"AI BOOTCAMP",
+        image:"/images/project/camp/DevCommu3_AIBootCamp.png",
+        description:""
+    },{
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"DATA BOOTCAMP",
+        image:"/images/project/camp/DevCommu_DataBootCamp.png",
+        description:""
+    },{
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"PYTHON BOOTCAMP",
+        image:"/images/project/camp/DevCommu_PythonBootCamp.png",
+        description:""
+    },
+    
+]
+
