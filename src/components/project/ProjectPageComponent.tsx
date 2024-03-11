@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { OursProjects } from "~/data/data";
+import Footer from "./Footer";
 
 interface ProjectPageComponentProps {
   text1: string;
@@ -64,23 +65,49 @@ export interface Project {
 
 export function SlidingProjects({ className }: { className?: string }) {
   return (
-    <Marquee
-      gradient={false}
-      speed={50}
-      pauseOnHover={true}
-      className={`w-screen ${className ?? ""}`}
-    >
-      {OursProjects?.map((project, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.2 }}
-          className="w-72 h-96 bg-white rounded-3xl shadow-lg mx-5 group"
-        >
-          <ProjectCard project={project} />
-        </motion.div>
-      ))}
-    </Marquee>
+    <div className="sticky top-20 z-10">
+      <Marquee
+        gradient={false}
+        speed={50}
+        pauseOnHover={true}
+        className={`w-screen${className ?? ""}`}
+      >
+        {OursProjects?.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+            className="w-72 h-96 bg-white rounded-3xl shadow-lg mx-5 group"
+          >
+            <ProjectCard project={project} />
+          </motion.div>
+        ))}
+      </Marquee>
+    </div>
+  );
+}
+
+export function SlideBlackArea() {
+  return (
+    <div className="z-40 relative text-white">
+      <div className="z-[400]">
+        <section className=" bg-gradient-to-t from-[#1E1E1E] to-transparent min-h-[20vh]"></section>
+        <section className=" bg-[#1E1E1E] min-h-[50vh] py-10 sticky">
+          <div className="sticky top-20">
+            <div className="font-bold font-lineSansTH_XB text-[48px]">
+              พวกเราผ่านอะไรมาแล้วบ้าง
+            </div>
+            <div className="font-lineSansTH font-thin text-[#FFBE5C] text-[34px]">
+              ลองเลื่อนอ่านเล่นๆได้นะ
+            </div>
+          </div>
+          <section className="bg-[#1E1E1E] min-h-[400vh]"></section>
+        </section>
+        <div className="bg-[#1E1E1E]">
+          <Footer></Footer>
+        </div>
+      </div>
+    </div>
   );
 }

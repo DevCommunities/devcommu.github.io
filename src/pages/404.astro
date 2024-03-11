@@ -16,7 +16,13 @@ import { Image } from "astro:assets";
   >
     <div class="flex flex-col items-center">
       <a href="/" class="text-center mb-6 hover:cursor-pointer animate-bounce">
-        <Image src="/favicon.svg" alt="404" width="200" height="200" class="hover:scale-125 transition-transform" />
+        <Image
+          src="/favicon.svg"
+          alt="404"
+          width="200"
+          height="200"
+          class="hover:scale-110 duration-250 transition-transform"
+        />
       </a>
       <div class="text-4xl font-bold mb-4">
         404 <span class="text-cutoff">Not Found</span>
@@ -26,7 +32,7 @@ import { Image } from "astro:assets";
       </p>
       <div class="mt-6 bg-primary p-2 rounded-md w-32 text-center">
         <p class="text-secondary text-base">
-            {Astro.url.pathname}
+          {Astro.url.pathname}
         </p>
       </div>
     </div>
