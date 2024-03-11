@@ -111,7 +111,9 @@ export function MaskEffectDevCommu() {
       }
       className="h-[40rem]"
     >
-      <div className="w-[800px] h-52 bg-[url('/images/about/bg_word.png')] bg-center bg-cover bg-no-repeat"></div>
+      <div className=" w-[800px] h-52 bg-[url('/images/about/bg_word.png')] bg-center bg-cover bg-no-repeat">
+        <p className=" max-w-4xl my-32 mx-auto h-20 w-52 bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain bg-no-repeat  text-4xl font-bold"></p>
+      </div>
     </MaskContainer>
   );
 }
