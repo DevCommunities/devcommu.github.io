@@ -231,24 +231,24 @@ export const MoreDetailList : DetailProps[] = [
     {
         title:"คิดโปรเจกที่อยากทำ",
         description:"กรุงเทพฯ มีแม่น้ำเจ้าพระยาไหลผ่านกลางเมือง มีเรือโดยสารประจำทางให้บริการ การเดินทางด้วยเรือเป็นการเดินทาง",
-        image:"/images/hompageStand1.png",
+        image:"/images/homepageStand1.png",
         title2:"ตามความสนใจ",
     },
     {
         title:"คิดโปรเจกที่อยากทำ",
         description:"กรุงเทพฯ มีแม่น้ำเจ้าพระยาไหลผ่านกลางเมือง มีเรือโดยสารประจำทางให้บริการ การเดินทางด้วยเรือเป็นการเดินทาง",
-        image:"/images/hompageStand2.png",
+        image:"/images/homepageStand2.png",
         title2:"ตามความสนใจ",
     },
     {
         title:"คิดโปรเจกที่อยากทำ",
         description:"กรุงเทพฯ มีแม่น้ำเจ้าพระยาไหลผ่านกลางเมือง มีเรือโดยสารประจำทางให้บริการ การเดินทางด้วยเรือเป็นการเดินทาง",
-        image:"/images/hompageStand3.png",
+        image:"/images/homepageStand3.png",
         title2:"ตามความสนใจ",
     },{
         title:"คิดโปรเจกที่อยากทำ",
         description:"กรุงเทพฯ มีแม่น้ำเจ้าพระยาไหลผ่านกลางเมือง มีเรือโดยสารประจำทางให้บริการ การเดินทางด้วยเรือเป็นการเดินทาง",
-        image:"/images/hompageStand4.png",
+        image:"/images/homepageStand4.png",
         title2:"ตามความสนใจ",
     },
 ]

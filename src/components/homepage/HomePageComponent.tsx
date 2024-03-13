@@ -112,22 +112,77 @@ export function MoreDetail() {
         <div className=" mb-4 font-lineSansTH font-bold text-[30px] text-start">
           ฝากนักเรียนให้คิดและลงมือทำ<br></br>ผ่าน Project Based Learning
         </div>
-        <div className="flex space-x-9 my-8">
+        <div className="flex space-x-9 my-8 relative">
           {MoreDetailList.map((item, index) => {
-            return <MoreDetailCard key={index} detail={item}></MoreDetailCard>;
+            if (index == 3) return;
+            return (
+              <MoreDetailCard
+                key={index}
+                detail={item}
+                index={index}
+              ></MoreDetailCard>
+            );
           })}
+          <MoreDetailCard3
+            key={3}
+            detail={MoreDetailList[3]}
+            index={3}
+          ></MoreDetailCard3>
         </div>
       </section>
     </section>
   );
 }
 
-function MoreDetailCard(prop: { detail: DetailProps }) {
+function MoreDetailCard(props: { detail: DetailProps; index: number }) {
   return (
-    <motion.div
-      whileHover={{ scale: 1.1 }}
-      className="w-72 h-72 bg-white rounded-xl shadow-lg"
-    ></motion.div>
+    <div className={` w-72 h-72  relative `}>
+      <motion.div
+        initial={{ width: "18rem", zIndex: 20 - props.index }}
+        whileHover={{ width: "39rem", zIndex: 20 }}
+        className={`h-full  rounded-xl absolute   bg-white flex shadow-lg  group space-x-7 `}
+      >
+        <div
+          className="w-72 h-full bg-contain bg-no-repeat absolute  "
+          style={{ backgroundImage: `url(${props.detail.image})` }}
+        ></div>
+        <motion.div className=" opacity-0 absolute group-hover:opacity-100 transition-all duration-400 invisible group-hover:visible  space-y-3 font-lineSansTH text-start pl-72 w-[39rem] h-full pr-10 py-5">
+          <p className="text-3xl font-lineSansTH_XB ">{props.detail.title}</p>
+          <p>{props.detail.description}</p>
+          <p className="text-primary text-3xl font-lineSansTH_XB">
+            {props.detail.title2}
+          </p>
+        </motion.div>
+      </motion.div>
+    </div>
+  );
+}
+
+function MoreDetailCard3(props: { detail: DetailProps; index: number }) {
+  return (
+    <div className={` w-72 h-72  relative `}>
+      <motion.div
+        initial={{ width: "18rem", right: "-1rem", zIndex: 1 }}
+        whileHover={{
+          width: "39rem",
+          right: "-1rem",
+          zIndex: 20,
+        }}
+        className={`h-full  rounded-xl absolute   bg-white flex shadow-lg  group space-x-7 `}
+      >
+        <div
+          className="w-72 h-full bg-contain bg-no-repeat absolute  "
+          style={{ backgroundImage: `url(${props.detail.image})` }}
+        ></div>
+        <motion.div className=" opacity-0 absolute group-hover:opacity-100 transition-all duration-400 invisible group-hover:visible  space-y-3 font-lineSansTH text-start pl-72 w-[39rem] h-full pr-10 py-5">
+          <p className="text-3xl font-lineSansTH_XB ">{props.detail.title}</p>
+          <p>{props.detail.description}</p>
+          <p className="text-primary text-3xl font-lineSansTH_XB">
+            {props.detail.title2}
+          </p>
+        </motion.div>
+      </motion.div>
+    </div>
   );
 }
 
