@@ -90,7 +90,7 @@ export function SlidingProjects({ className }: { className?: string }) {
   );
 }
 
-interface SlideProjectProps {
+export interface SlideProjectProps {
   title: string;
   description: string;
   image: string;
