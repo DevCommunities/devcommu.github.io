@@ -29,24 +29,27 @@ export default function AboutUsPageComponent(props: AboutUsPageComponentProps) {
   const side3 = useTransform(scrollYProgress, [0, 1], ["86%", "120%"]);
   const { text1 } = props;
   return (
-    <section className="mt-20">
-      <div className=" h-4 max-w-80 bg-no-repeat mb-6 mx-auto bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
-      <section className="font-lineSansTH_XB text-[60px]">
-        <h1>{text1}</h1>
+    <div>
+      <section id="Home" className=" h-10"></section>
+      <section className="mt-20">
+        <div className=" h-4 max-w-80 bg-no-repeat mb-6 mx-auto bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
+        <section className="font-lineSansTH_XB text-[60px]">
+          <h1>{text1}</h1>
+        </section>
+        <motion.section
+          style={{ x: side1 }}
+          className={`fixed top-[13%] w-[50%] h-96  bg-20 bg-[url('/images/keyboard1.png')] bg-contain bg-no-repeat`}
+        ></motion.section>
+        <motion.section
+          style={{ x: side2 }}
+          className={`fixed top-[25%] h-96 w-full bg-20 bg-[url('/images/arduino1.png')] bg-contain bg-no-repeat`}
+        ></motion.section>
+        <motion.section
+          style={{ x: side3 }}
+          className={`fixed top-[20%] h-20 w-full bg-20 bg-[url('/images/python.png')] bg-contain bg-no-repeat`}
+        ></motion.section>
       </section>
-      <motion.section
-        style={{ x: side1 }}
-        className={`fixed top-[13%] w-[50%] h-96  bg-20 bg-[url('/images/keyboard1.png')] bg-contain bg-no-repeat`}
-      ></motion.section>
-      <motion.section
-        style={{ x: side2 }}
-        className={`fixed top-[25%] h-96 w-full bg-20 bg-[url('/images/arduino1.png')] bg-contain bg-no-repeat`}
-      ></motion.section>
-      <motion.section
-        style={{ x: side3 }}
-        className={`fixed top-[20%] h-20 w-full bg-20 bg-[url('/images/python.png')] bg-contain bg-no-repeat`}
-      ></motion.section>
-    </section>
+    </div>
   );
 }
 

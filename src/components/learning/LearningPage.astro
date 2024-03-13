@@ -1,0 +1,17 @@
+---
+import ProjectPageComponent from "../homepage/HomePageComponent";
+import Footer from "../homepage/Footer";
+---
+
+<header class="bg-secondary pl-8 pt-8 pr-8 text-center rounded-md">
+  <section class="container mx-auto pt-8 px-4 sm:px-0">
+    <ProjectPageComponent
+      text1={"เนื้อหาภายในหน้านี้"}
+      text2={"กำลังจัดทำอยู่"}
+      text3={"To be continue"}
+      client:load
+    />
+  </section>
+  <section class="min-h-[50vh]"></section>
+  <Footer client:visible />
+</header>

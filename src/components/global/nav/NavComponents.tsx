@@ -9,7 +9,7 @@ type Data = {
 const data: Data = [
   { title: "หน้าหลัก", href: "/" },
   { title: "โครงการ", href: "/project" },
-  { title: "สถานะ", href: "/status" },
+  { title: "ความรู้", href: "/learning" },
   { title: "เกี่ยวกับเรา", href: "/about" },
 ];
 
