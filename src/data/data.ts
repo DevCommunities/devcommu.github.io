@@ -1,36 +1,68 @@
 import {type Project,type SlideProjectProps } from '~/components/project/ProjectPageComponent' 
 import {type AboutUs} from '~/components/about/AboutUsPageComponent'
+import {type DetailProps} from "~/components/homepage/HomePageComponent"
 export const OursProjects: Project[] = [
     {
         title: "DevCommu 1",
         description: "Description 1",
-        image: "/projects/devcommu1/thumbnail.jpg",
+        image: "/images/project/camp/DevCommu_DataBootCamp.png",
     },
     {
         title: "DevCommu 1",
         description: "Description 1",
-        image: "/projects/devcommu1/thumbnail.jpg",
+        image: "/images/project/camp/DevCommu_PythonBootCamp.png",
     },
     {
         title: "DevCommu 1",
         description: "Description 1",
-        image: "/projects/devcommu1/thumbnail.jpg",
+        image: "/images/project/camp/DevCommu3_AIBootCamp.png",
     },
     {
         title: "DevCommu 1",
         description: "Description 1",
-        image: "/projects/devcommu1/thumbnail.jpg",
+        image: "/images/project/camp/exampleP1.png",
     },
     {
         title: "DevCommu 1",
         description: "Description 1",
-        image: "/projects/devcommu1/thumbnail.jpg",
+        image: "/images/project/camp/DevCommu_DataBootCamp.png",
     },
     {
         title: "DevCommu 1",
         description: "Description 1",
-        image: "/projects/devcommu1/thumbnail.jpg",
+        image: "/images/project/camp/DevCommu_PythonBootCamp.png",
     },
+    {
+        title: "DevCommu 1",
+        description: "Description 1",
+        image: "/images/project/camp/DevCommu3_AIBootCamp.png",
+    },
+    {
+        title: "DevCommu 1",
+        description: "Description 1",
+        image: "/images/project/camp/exampleP1.png",
+    },
+    {
+        title: "DevCommu 1",
+        description: "Description 1",
+        image: "/images/project/camp/DevCommu_DataBootCamp.png",
+    },
+    {
+        title: "DevCommu 1",
+        description: "Description 1",
+        image: "/images/project/camp/DevCommu_PythonBootCamp.png",
+    },
+    {
+        title: "DevCommu 1",
+        description: "Description 1",
+        image: "/images/project/camp/DevCommu3_AIBootCamp.png",
+    },
+    {
+        title: "DevCommu 1",
+        description: "Description 1",
+        image: "/images/project/camp/exampleP1.png",
+    },  
+
 ]
 
 export const About :AboutUs[] = [
@@ -80,63 +112,143 @@ export const SlideProjectList : SlideProjectProps[] = [
         title:"ค่าย DevCommu ครั้งที่ 3 Make AI Drive Your Dream",
         type:"AI BOOTCAMP",
         image:"/images/project/camp/DevCommu3_AIBootCamp.png",
-        description:""
+        description:"",
+        date:"12",
+        month:"มกราคม",
+        year:"2564",
+        show:false
     },{
         title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
         type:"DATA BOOTCAMP",
         image:"/images/project/camp/DevCommu_DataBootCamp.png",
-        description:""
+        description:"",
+        date:"12",
+        month:"กุมภาพันธ์",
+        year:"2564",
+        show:false
     },{
         title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
         type:"PYTHON BOOTCAMP",
         image:"/images/project/camp/DevCommu_PythonBootCamp.png",
-        description:""
-    },{
+        description:"",
+        date:"12",
+        month:"มีนาคม",
+        year:"2564",
+        show:false
+    },  
+     {
         title:"ค่าย DevCommu ครั้งที่ 3 Make AI Drive Your Dream",
         type:"AI BOOTCAMP",
         image:"/images/project/camp/DevCommu3_AIBootCamp.png",
-        description:""
+        description:"",
+        date:"12",
+        month:"มกราคม",
+        year:"2564",
+        show:false
     },{
         title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
         type:"DATA BOOTCAMP",
         image:"/images/project/camp/DevCommu_DataBootCamp.png",
-        description:""
+        description:"",
+        date:"12",
+        month:"กุมภาพันธ์",
+        year:"2564",
+        show:false
     },{
         title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
         type:"PYTHON BOOTCAMP",
         image:"/images/project/camp/DevCommu_PythonBootCamp.png",
-        description:""
-    },{
-        title:"ค่าย DevCommu ครั้งที่ 3 Make AI Drive Your Dream",
-        type:"AI BOOTCAMP",
-        image:"/images/project/camp/DevCommu3_AIBootCamp.png",
-        description:""
-    },{
-        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
-        type:"DATA BOOTCAMP",
-        image:"/images/project/camp/DevCommu_DataBootCamp.png",
-        description:""
-    },{
-        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
-        type:"PYTHON BOOTCAMP",
-        image:"/images/project/camp/DevCommu_PythonBootCamp.png",
-        description:""
-    },{
-        title:"ค่าย DevCommu ครั้งที่ 3 Make AI Drive Your Dream",
-        type:"AI BOOTCAMP",
-        image:"/images/project/camp/DevCommu3_AIBootCamp.png",
-        description:""
-    },{
-        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
-        type:"DATA BOOTCAMP",
-        image:"/images/project/camp/DevCommu_DataBootCamp.png",
-        description:""
-    },{
-        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
-        type:"PYTHON BOOTCAMP",
-        image:"/images/project/camp/DevCommu_PythonBootCamp.png",
-        description:""
+        description:"",
+        date:"12",
+        month:"มีนาคม",
+        year:"2564",
+        show:false
     },
-    
+    {
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"DATA BOOTCAMP",
+        image:"/images/project/camp/DevCommu_DataBootCamp.png",
+        description:"",
+        date:"12",
+        month:"กุมภาพันธ์",
+        year:"2564",
+        show:false
+    },{
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"PYTHON BOOTCAMP",
+        image:"/images/project/camp/DevCommu_PythonBootCamp.png",
+        description:"",
+        date:"12",
+        month:"มีนาคม",
+        year:"2564",
+        show:false
+    },
+
+    {
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"DATA BOOTCAMP",
+        image:"/images/project/camp/DevCommu_DataBootCamp.png",
+        description:"",
+        date:"12",
+        month:"กุมภาพันธ์",
+        year:"2564",
+        show:false
+    },{
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"PYTHON BOOTCAMP",
+        image:"/images/project/camp/DevCommu_PythonBootCamp.png",
+        description:"",
+        date:"12",
+        month:"มีนาคม",
+        year:"2564",
+        show:false
+    },
+
+    {
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"DATA BOOTCAMP",
+        image:"/images/project/camp/DevCommu_DataBootCamp.png",
+        description:"",
+        date:"12",
+        month:"กุมภาพันธ์",
+        year:"2564",
+        show:false
+    },{
+        title:"ค่าย DevCommu x โรงเรียนนวมิทร์ทราชูทิศ สตรีวิทยา 2",
+        type:"PYTHON BOOTCAMP",
+        image:"/images/project/camp/DevCommu_PythonBootCamp.png",
+        description:"",
+        date:"12",
+        month:"มีนาคม",
+        year:"2564",
+        show:false
+    },
+
 ]
 
+
+export const MoreDetailList : DetailProps[] = [
+    {
+        title:"คิดโปรเจกที่อยากทำ",
+        description:"กรุงเทพฯ มีแม่น้ำเจ้าพระยาไหลผ่านกลางเมือง มีเรือโดยสารประจำทางให้บริการ การเดินทางด้วยเรือเป็นการเดินทาง",
+        image:"/images/hompageStand1.png",
+        title2:"ตามความสนใจ",
+    },
+    {
+        title:"คิดโปรเจกที่อยากทำ",
+        description:"กรุงเทพฯ มีแม่น้ำเจ้าพระยาไหลผ่านกลางเมือง มีเรือโดยสารประจำทางให้บริการ การเดินทางด้วยเรือเป็นการเดินทาง",
+        image:"/images/hompageStand2.png",
+        title2:"ตามความสนใจ",
+    },
+    {
+        title:"คิดโปรเจกที่อยากทำ",
+        description:"กรุงเทพฯ มีแม่น้ำเจ้าพระยาไหลผ่านกลางเมือง มีเรือโดยสารประจำทางให้บริการ การเดินทางด้วยเรือเป็นการเดินทาง",
+        image:"/images/hompageStand3.png",
+        title2:"ตามความสนใจ",
+    },{
+        title:"คิดโปรเจกที่อยากทำ",
+        description:"กรุงเทพฯ มีแม่น้ำเจ้าพระยาไหลผ่านกลางเมือง มีเรือโดยสารประจำทางให้บริการ การเดินทางด้วยเรือเป็นการเดินทาง",
+        image:"/images/hompageStand4.png",
+        title2:"ตามความสนใจ",
+    },
+]

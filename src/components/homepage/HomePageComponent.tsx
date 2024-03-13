@@ -1,6 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
+import { MoreDetailList } from "~/data/data";
+
 interface Text {
   text1: String;
   text2: String;
@@ -111,26 +113,29 @@ export function MoreDetail() {
           ฝากนักเรียนให้คิดและลงมือทำ<br></br>ผ่าน Project Based Learning
         </div>
         <div className="flex space-x-9 my-8">
-          <motion.div
-            whileHover={{ scale: 1.04 }}
-            className="h-72 w-72 bg-white rounded-xl shadow-lg"
-          ></motion.div>
-          <motion.div
-            whileHover={{ scale: 1.04 }}
-            className="h-72 w-72 bg-white rounded-xl shadow-lg"
-          ></motion.div>
-          <motion.div
-            whileHover={{ scale: 1.04 }}
-            className="h-72 w-72 bg-white rounded-xl shadow-lg"
-          ></motion.div>
-          <motion.div
-            whileHover={{ scale: 1.04 }}
-            className="h-72 w-72 bg-white rounded-xl shadow-lg"
-          ></motion.div>
+          {MoreDetailList.map((item, index) => {
+            return <MoreDetailCard key={index} detail={item}></MoreDetailCard>;
+          })}
         </div>
       </section>
     </section>
   );
+}
+
+function MoreDetailCard(prop: { detail: DetailProps }) {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      className="w-72 h-72 bg-white rounded-xl shadow-lg"
+    ></motion.div>
+  );
+}
+
+export interface DetailProps {
+  title: string;
+  description: string;
+  image: string;
+  title2: string;
 }
 
 //generate by Gimini. Gonna Change for sure

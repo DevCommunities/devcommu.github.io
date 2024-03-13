@@ -1,8 +1,9 @@
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Marquee from "react-fast-marquee";
 import { OursProjects, SlideProjectList } from "~/data/data";
 import Footer from "./Footer";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 interface ProjectPageComponentProps {
   text1: string;
@@ -89,41 +90,93 @@ export function SlidingProjects({ className }: { className?: string }) {
   );
 }
 
-export interface SlideProjectProps {
+interface SlideProjectProps {
   title: string;
   description: string;
   image: string;
   type: string;
+  date: string;
+  month: string;
+  year: string;
+  show: any;
 }
 
 export function SlideProjectCard(props: { project: SlideProjectProps }) {
+  const [ref, inView] = useInView({
+    rootMargin: "-420px 0px",
+  });
+
   return (
-    <motion.div className="flex space-x-12 mb-10 snap-center">
-      <div
-        className=" h-56 w-[30rem] rounded-lg bg-center bg-cover bg-no-repeat "
-        style={{ backgroundImage: `url(${props.project.image})` }}
-      ></div>
-      <div className="py-3">
-        <h1 className="font-lineSansTH text-primary font-bold text-[18px]">
-          {props.project.type}
-        </h1>
-        <h1 className="font-lineSansTH text-white font-bold text-[30px]">
-          {props.project.title}
-        </h1>
-        <button className="h-8 min-w-24 px-4 bg-[#334155] mt-7 rounded-full transition-colors hover:bg-[#475d78]">
-          <div className="flex items-center space-x-3">
-            <div className="h-4 w-3 bg-[url('/images/project/arrow.png')] bg-contain bg-center bg-no-repeat"></div>
-            <p className=" font-lineSansTH font-bold text-[17px]">
-              อ่านเพิ่มเติม
-            </p>
+    <div className="flex  relative">
+      <motion.div
+        initial={{ x: 20, opacity: 0 }}
+        animate={{ opacity: inView ? 1 : 0 }}
+        className="  h-full text-end text-white -mr-14 py-4 font-lineSansTH font-bold  "
+      >
+        <p className=" text-lg">{props.project.date}</p>
+        <p className=" text-lg">{props.project.month}</p>
+        <p className=" text-lg">{props.project.year}</p>
+      </motion.div>
+      <motion.div
+        ref={ref}
+        initial={{ x: 0 }} // Initial animation state
+        animate={{ x: inView ? 90 : 0 }} // Animate when in view
+        transition={{ duration: 0.5 }} // Animation duration
+      >
+        <motion.div className="flex space-x-12 mb-10 snap-center">
+          <div
+            className=" h-56 w-[30rem] rounded-lg bg-center bg-cover bg-no-repeat "
+            style={{ backgroundImage: `url(${props.project.image})` }}
+          ></div>
+          <div className="py-3">
+            <h1 className="font-lineSansTH text-primary font-bold text-[18px]">
+              {props.project.type}
+            </h1>
+            <h1 className="font-lineSansTH text-white font-bold text-[30px]">
+              {props.project.title}
+            </h1>
+            <button className="h-8 min-w-24 px-4 bg-[#334155] mt-7 rounded-full transition-colors hover:bg-[#475d78]">
+              <div className="flex items-center space-x-3">
+                <div className="h-4 w-3 bg-[url('/images/project/arrow.png')] bg-contain bg-center bg-no-repeat"></div>
+                <p className=" font-lineSansTH font-bold text-[17px]">
+                  อ่านเพิ่มเติม
+                </p>
+              </div>
+            </button>
           </div>
-        </button>
-      </div>
-    </motion.div>
+        </motion.div>
+      </motion.div>
+    </div>
   );
 }
 
+const CenterOnInViewBar = ({ children }: { children: React.ReactNode }) => {
+  const [ref, inView] = useInView({
+    root: this,
+    rootMargin: "-360px 0px", // Adjust root margin as needed
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 1 }} // Initial animation state
+      animate={{ opacity: inView ? 1 : 0 }} // Animate when in view
+      transition={{ duration: 0.5 }} // Animation duration
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 export function SlideBlackArea() {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    container: ref,
+    offset: ["start start", "end end"],
+  });
+  const slide = useTransform(scrollYProgress, [0, 1], ["0%", "95%"]);
+  // console.log("scroolYProgress", scrollYProgress);
   return (
     <div className="z-40 relative text-white">
       <div className="z-[400]">
@@ -138,14 +191,37 @@ export function SlideBlackArea() {
             </div>
           </div>
         </section>
-        <section className="bg-[#1E1E1E] flex space-x-10 p-10 ">
+        <section
+          ref={ref}
+          style={{ scrollbarWidth: "none" }}
+          className="bg-[#1E1E1E] flex space-x-10 p-10 snap-y overflow-y-scroll max-h-screen snap-mandatory"
+        >
           <div className="  min-w-[13%] ">
-            <div className=" bg-gradient-to-b from-white w-3 h-full mx-auto "></div>
+            <div className=" bg-[#616161] mx-auto w-1 h-screen left-24  rounded-full absolute">
+              <motion.div className="h-full" style={{ y: slide }}>
+                <div className="bg-[#FF326C] h-3 w-3 rounded-full -mx-[0.23rem] z-50 absolute"></div>
+                {/* {SlideProjectList.map((project, index) => {
+                  return (
+                    <div key={index}>
+                      <p className=" font-lineSansTH font-bold text-lg -my-1 mx-5 absolute">
+                        {project.date}
+                      </p>
+                      <p className=" font-lineSansTH font-bold text-sm -mx-12 absolute">
+                        {project.year}
+                      </p>
+                      <p className=" font-lineSansTH font-bold text-sm my-7 mx-5 absolute">
+                        {project.month}
+                      </p>
+                    </div>
+                  );
+                })} */}
+                <div className="pt-2">
+                  <div className="bg-[#FF326C] h-10"></div>
+                </div>
+              </motion.div>
+            </div>
           </div>
-          <div
-            className=" w-full p-10 h-[80vh] text-start snap-y overflow-y-scroll snap-mandatory"
-            style={{ scrollbarWidth: "none" }}
-          >
+          <div className=" w-full p-10 h-[100vh] text-start ">
             {SlideProjectList.map((project, index) => {
               return (
                 <SlideProjectCard
@@ -155,7 +231,6 @@ export function SlideBlackArea() {
               );
             })}
           </div>
-          <div></div>
         </section>
       </div>
       <div className="bg-[#1E1E1E]">
