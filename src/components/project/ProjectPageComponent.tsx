@@ -12,6 +12,22 @@ interface ProjectPageComponentProps {
   buttonText: string;
 }
 
+function Slug(title: string) {
+  return (
+    title
+      // remove leading & trailing whitespace
+      .trim()
+      // remove special characters
+      .replace(/[^A-Za-z0-9 ]/g, "")
+      // replace spaces
+      .replace(/\s+/g, "-")
+      // remove leading & trailing separtors
+      .replace(/^-+|-+$/g, "")
+      // output lowercase
+      .toLowerCase()
+  );
+}
+
 export default function ProjectPageComponent(props: ProjectPageComponentProps) {
   const { text1, text2, text3, buttonText } = props;
   return (
@@ -93,6 +109,7 @@ export function SlidingProjects({ className }: { className?: string }) {
 }
 
 export interface SlideProjectProps {
+  slug: string;
   title: string;
   description: string;
   image: string;
@@ -101,6 +118,15 @@ export interface SlideProjectProps {
   month: string;
   year: string;
   show: any;
+  imageDetail: string[];
+  schedule: string[][];
+  projectExam: {
+    title: string;
+    description: string;
+    image: string;
+    author: string;
+  }[];
+  constructor: { img: string; name: string; describtion: string }[];
 }
 
 export function SlideProjectCard(props: { project: SlideProjectProps }) {
@@ -138,12 +164,14 @@ export function SlideProjectCard(props: { project: SlideProjectProps }) {
               {props.project.title}
             </h1>
             <button className="h-8 min-w-24 px-4 bg-[#334155] mt-7 rounded-full transition-colors hover:bg-[#475d78]">
-              <div className="flex items-center space-x-3">
-                <div className="h-4 w-3 bg-[url('/images/project/arrow.png')] bg-contain bg-center bg-no-repeat"></div>
-                <p className=" font-lineSansTH font-bold text-[17px]">
-                  อ่านเพิ่มเติม
-                </p>
-              </div>
+              <a href={`/project/${Slug(props.project.slug)}`}>
+                <div className="flex items-center space-x-3">
+                  <div className="h-4 w-3 bg-[url('/images/project/arrow.png')] bg-contain bg-center bg-no-repeat"></div>
+                  <p className=" font-lineSansTH font-bold text-[17px]">
+                    อ่านเพิ่มเติม
+                  </p>
+                </div>
+              </a>
             </button>
           </div>
         </motion.div>

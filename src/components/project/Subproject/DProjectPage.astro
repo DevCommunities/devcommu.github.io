@@ -1,0 +1,16 @@
+---
+import DProjectPageComponent from "./DProjectPageComponent";
+import Footer from "../../../components/homepage/Footer";
+
+const project: any = Astro.props;
+---
+
+<header class="bg-secondary pl-8 pt-10 pr-8 text-center">
+  <section class="mx-auto my-10 pt-8 px-4 min-h-screen sm:px-0">
+    <DProjectPageComponent project={project} client:only="react" />
+    <div class="min-h-[20vh]"></div>
+  </section>
+  <Footer client:visible>
+    <section class="mx-auto"></section>
+  </Footer>
+</header>

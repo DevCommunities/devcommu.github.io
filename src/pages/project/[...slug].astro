@@ -1,0 +1,26 @@
+---
+import { SlideProjectList } from "../../data/data";
+import Layout from "../../layouts/Layout.astro";
+import { type SlideProjectProps } from "../../components/project/ProjectPageComponent";
+
+export function getStaticPaths() {
+  const path = SlideProjectList.map((project: SlideProjectProps) => {
+    return {
+      params: { slug: project.slug },
+      props: project,
+    };
+  });
+  console.log(path);
+  return path;
+}
+
+const project: SlideProjectProps = Astro.props;
+
+import DProjectPage from "../../components/project/Subproject/DProjectPage.astro";
+---
+
+<Layout title="Projects">
+  <main class="min-h-full bg-isabelline bg-secondary">
+    <DProjectPage {...project} />
+  </main>
+</Layout>
