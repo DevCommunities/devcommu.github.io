@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Marquee from "react-fast-marquee";
-import { OursProjects, SlideProjectList } from "~/data/data";
+import { SlideProjectList } from "~/data/data";
 import Footer from "./Footer";
 import { useRef } from "react";
 
@@ -52,17 +52,20 @@ export default function ProjectPageComponent(props: ProjectPageComponentProps) {
   );
 }
 
-export function ProjectCard(props: { project: Project; className?: string }) {
+export function ProjectCard(props: {
+  project: SlideProjectProps;
+  className?: string;
+}) {
   return (
     // crop fill
-    <div className={`h-full group ${props.className}`}>
+    <div className={`h-full group ${props.className} font-lineSansTH`}>
       <div
         className="h-full bg-cover bg-center bg-no-repeat rounded-3xl group"
         style={{ backgroundImage: `url(${props.project.image})` }}
       >
         {/* explanation card */}
         <a
-          href="#"
+          href={`/project/${props.project.slug}`}
           className="group-hover:bg-opacity-90 group-hover:block h-full bg-accent-secondary bg-opacity-0 rounded-3xl trasition-all duration-500"
         >
           <div className="flex flex-col justify-center h-full p-5 opacity-0 group-hover:opacity-100 transition-all duration-500">
@@ -77,12 +80,6 @@ export function ProjectCard(props: { project: Project; className?: string }) {
   );
 }
 
-export interface Project {
-  title: string;
-  description: string;
-  image: string;
-}
-
 export function SlidingProjects({ className }: { className?: string }) {
   return (
     <div className="sticky top-20 z-10">
@@ -92,7 +89,7 @@ export function SlidingProjects({ className }: { className?: string }) {
         pauseOnHover={true}
         className={`w-screen${className ?? ""}`}
       >
-        {OursProjects?.map((project, index) => (
+        {SlideProjectList?.map((project, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: 100 }}
@@ -179,24 +176,6 @@ export function SlideProjectCard(props: { project: SlideProjectProps }) {
     </div>
   );
 }
-
-const CenterOnInViewBar = ({ children }: { children: React.ReactNode }) => {
-  const [ref, inView] = useInView({
-    root: this,
-    rootMargin: "-360px 0px", // Adjust root margin as needed
-  });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 1 }} // Initial animation state
-      animate={{ opacity: inView ? 1 : 0 }} // Animate when in view
-      transition={{ duration: 0.5 }} // Animation duration
-    >
-      {children}
-    </motion.div>
-  );
-};
 
 export function SlideBlackArea() {
   const ref = useRef(null);
