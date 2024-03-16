@@ -113,7 +113,7 @@ export function MoreDetail() {
         <div className=" mb-4 font-lineSansTH font-bold text-[30px] text-start">
           ฝากนักเรียนให้คิดและลงมือทำ<br></br>ผ่าน Project Based Learning
         </div>
-        <div className="flex space-x-9 my-8 relative">
+        <div className="flex space-x-9 my-8 relative overflow-hidden">
           {MoreDetailList.map((item, index) => {
             if (index == 3) return;
             return (
@@ -161,7 +161,7 @@ function MoreDetailCard(props: { detail: DetailProps; index: number }) {
 
 function MoreDetailCard3(props: { detail: DetailProps; index: number }) {
   return (
-    <div className={` w-72 h-72  relative `}>
+    <div className={` w-72 h-72  relative`}>
       <motion.div
         initial={{ width: "18rem", right: "-1rem", zIndex: 1 }}
         whileHover={{

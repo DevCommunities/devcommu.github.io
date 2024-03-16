@@ -58,7 +58,9 @@ export function ProjectCard(props: {
 }) {
   return (
     // crop fill
-    <div className={`h-full group ${props.className} font-lineSansTH`}>
+    <div
+      className={`h-full group ${props.className} font-lineSansTH text-center`}
+    >
       <div
         className="h-full bg-cover bg-center bg-no-repeat rounded-3xl group"
         style={{ backgroundImage: `url(${props.project.image})` }}
@@ -72,7 +74,7 @@ export function ProjectCard(props: {
             <h1 className="text-2xl font-bold text-primary">
               {props.project.title}
             </h1>
-            <p className="text-cutoff">{props.project.description}</p>
+            <p className="text-cutoff mt-3">{props.project.description}</p>
           </div>
         </a>
       </div>
