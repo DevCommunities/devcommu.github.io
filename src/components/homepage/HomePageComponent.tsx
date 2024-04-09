@@ -23,11 +23,11 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
     <section id="Home" ref={ref} className="flex flex-col items-center">
       <section className="mt-20 w-full flex flex-col items-center">
         <div className="h-16 w-80 bg-no-repeat mb-6 bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
-        <section className="font-lineSansTH_XB text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center">
+        <section className="font-lineSansTH_XB text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center text-cutoff">
           <h1>
             {text1} <span className="text-primary"> {text2}</span>
           </h1>
-          <h1>{text3}</h1>
+          <h1 className="text-2xl sm:text-4xl">{text3}</h1>
         </section>
         <motion.button
           whileHover={{ scale: 1.04 }}
@@ -56,7 +56,7 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
 
 export function VideoExample() {
   return (
-    <section className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 lg:my-32 md:mx-auto rounded-xl bg-[url('/images/campPromote1Thumb.png')] bg-cover bg-center bg-no-repeat">
+    <section className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 lg:my-4 md:mx-auto rounded-xl bg-[url('/images/campPromote1Thumb.png')] bg-cover bg-center bg-no-repeat">
       <video controls width="100%" className="rounded-xl">
         <source src="/videos/campPromote1/campPromote1.mp4" type="video/mp4" />
         Sorry, your browser doesn't support videos.
