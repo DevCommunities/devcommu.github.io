@@ -56,7 +56,7 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
 
 export function VideoExample() {
   return (
-    <section className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 my-32 mx-auto rounded-xl bg-[url('/images/campPromote1Thumb.png')] bg-cover bg-center bg-no-repeat">
+    <section className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 lg:my-32 md:mx-auto rounded-xl bg-[url('/images/campPromote1Thumb.png')] bg-cover bg-center bg-no-repeat">
       <video controls width="100%" className="rounded-xl">
         <source src="/videos/campPromote1/campPromote1.mp4" type="video/mp4" />
         Sorry, your browser doesn't support videos.
