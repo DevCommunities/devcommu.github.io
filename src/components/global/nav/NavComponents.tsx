@@ -57,7 +57,9 @@ export function NavListContainer({
             key={idx}
             href={item.href.toString()}
             className={`text-gray-800 hover:text-pink-500 px-1.5 py-2 font-lineSansTH rounded-full font-medium ${
-              currentPath.endsWith(item.href.toString())
+              currentPath.endsWith(item.href.toString()) ||
+              (item.href.toString() != "/" &&
+                currentPath.includes(item.href.toString()))
                 ? "bg-white"
                 : "bg-[#E2E8F0]"
             } ${item.low_priority ? "hidden xs:block" : ""}`}
