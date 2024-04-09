@@ -23,6 +23,9 @@ import { NavListContainer } from "~/components/global/nav/NavComponents";
 </style>
 <NavContainer transition:animate="fade">
   <NavListContainer pathName={Astro.url.pathname} client:load>
-    <DarkModelToggle />
+    <!-- hide on mobile as it take lots of space -->
+    <div class="sm:block hidden"> 
+      <DarkModelToggle />
+    </div>
   </NavListContainer>
 </NavContainer>

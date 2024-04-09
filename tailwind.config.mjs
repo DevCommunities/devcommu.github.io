@@ -9,6 +9,9 @@ export default {
 			lineSansTH_XB: ['LINESeedSansTHXB', ...defaultTheme.fontFamily.sans],
 		  },
 		extend: {
+			screens: {
+				'xs': '350px',
+			},
 			colors: {
 				'primary': '#E57192',
 				'secondary': '#F6F6F6',

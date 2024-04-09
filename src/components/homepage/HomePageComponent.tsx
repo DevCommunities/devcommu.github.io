@@ -15,18 +15,15 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
     target: ref,
     offset: ["start start", "end center"],
   });
-  const side1 = useTransform(scrollYProgress, [0, 1], ["-40%", "-150%"]);
-  const side2 = useTransform(scrollYProgress, [0, 1], ["83%", "130%"]);
-  const side3 = useTransform(scrollYProgress, [0, 1], ["86%", "120%"]);
-  console.log(side1.get());
-  console.log(side2.get());
+  const side1 = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
+  const side2 = useTransform(scrollYProgress, [0, 1], ["100%", "200%"]);
+  const side3 = useTransform(scrollYProgress, [0, 1], ["100%", "200%"]);
 
   return (
-    <section>
-      <section id="Home" className=" h-10 origin-top"></section>
-      <section className="mt-20">
-        <div className=" h-4 max-w-80 bg-no-repeat mb-6 mx-auto bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
-        <section className="font-lineSansTH_XB text-[60px]">
+    <section id="Home" ref={ref} className="flex flex-col items-center">
+      <section className="mt-20 w-full flex flex-col items-center">
+        <div className="h-16 w-80 bg-no-repeat mb-6 bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
+        <section className="font-lineSansTH_XB text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center">
           <h1>
             {text1} <span className="text-primary"> {text2}</span>
           </h1>
@@ -36,22 +33,21 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
           whileHover={{ scale: 1.04 }}
           className="h-10 p-auto px-7 font-lineSansTH font-bold text-white bg-primary rounded-full my-5 hover:bg-[#c96380] transition-colors duration-200"
         >
-          {" "}
           สนใจจัดกิจกรรม
         </motion.button>
 
         {/*SideBar effect Scrolling */}
         <motion.section
           style={{ x: side1 }}
-          className={`fixed top-[13%] w-[50%] h-96  bg-20 bg-[url('/images/keyboard1.png')] bg-contain bg-no-repeat`}
+          className={`hidden sm:fixed top-[13%] w-[50%] h-96 bg-[url('/images/keyboard1.png')] bg-contain bg-no-repeat`}
         ></motion.section>
         <motion.section
           style={{ x: side2 }}
-          className={`fixed top-[25%] h-96 w-full bg-20 bg-[url('/images/arduino1.png')] bg-contain bg-no-repeat`}
+          className={`hidden sm:fixed top-[25%] h-96 w-[50%] bg-[url('/images/arduino1.png')] bg-contain bg-no-repeat`}
         ></motion.section>
         <motion.section
           style={{ x: side3 }}
-          className={`fixed top-[20%] h-20 w-full bg-20 bg-[url('/images/python.png')] bg-contain bg-no-repeat`}
+          className={`hidden sm:fixed top-[20%] h-20 w-[50%] bg-[url('/images/python.png')] bg-contain bg-no-repeat`}
         ></motion.section>
       </section>
     </section>
@@ -60,7 +56,7 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
 
 export function VideoExample() {
   return (
-    <section className=" w-[78%] my-32 h-full mx-auto rounded-xl bg-[url('/images/campPromote1Thumb.png')] bg-cover bg-center bg-no-repeat ">
+    <section className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 my-32 mx-auto rounded-xl bg-[url('/images/campPromote1Thumb.png')] bg-cover bg-center bg-no-repeat">
       <video controls width="100%" className="rounded-xl">
         <source src="/videos/campPromote1/campPromote1.mp4" type="video/mp4" />
         Sorry, your browser doesn't support videos.
