@@ -38,15 +38,15 @@ export default function AboutUsPageComponent(props: AboutUsPageComponentProps) {
         </section>
         <motion.section
           style={{ x: side1 }}
-          className={`fixed top-[13%] w-[50%] h-96  bg-20 bg-[url('/images/keyboard1.png')] bg-contain bg-no-repeat`}
+          className={`fixed top-[13%] hidden md:block  w-[50%] h-96  bg-20 bg-[url('/images/keyboard1.png')] bg-contain bg-no-repeat`}
         ></motion.section>
         <motion.section
           style={{ x: side2 }}
-          className={`fixed top-[25%] h-96 w-full bg-20 bg-[url('/images/arduino1.png')] bg-contain bg-no-repeat`}
+          className={`fixed top-[25%] hidden md:block h-96 w-full bg-20 bg-[url('/images/arduino1.png')] bg-contain bg-no-repeat`}
         ></motion.section>
         <motion.section
           style={{ x: side3 }}
-          className={`fixed top-[20%] h-20 w-full bg-20 bg-[url('/images/python.png')] bg-contain bg-no-repeat`}
+          className={`fixed hidden md:block top-[20%] h-20 w-full bg-20 bg-[url('/images/python.png')] bg-contain bg-no-repeat`}
         ></motion.section>
       </section>
     </div>
@@ -132,7 +132,7 @@ export function MaskEffectDevCommu() {
       revealText={
         <p className="max-w-4xl mx-auto h-20 w-52 bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain bg-no-repeat  text-4xl font-bold"></p>
       }
-      className="h-[40rem]"
+      className="h-[40rem] hidden md:block"
     >
       <div className=" w-[800px] h-52 bg-[url('/images/about/bg_word.png')] bg-center bg-cover bg-no-repeat">
         <p className=" max-w-4xl my-32 mx-auto h-20 w-52 bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain bg-no-repeat  text-4xl font-bold"></p>
@@ -143,19 +143,19 @@ export function MaskEffectDevCommu() {
 
 export function TextDetail() {
   return (
-    <>
-      <p className=" font-lineSansTH text-[18px] w-[50%] mx-auto font-bold text-center">
+    <div className="md:w-[60%] mx-auto">
+      <p className=" font-lineSansTH md:text-xl text-sm    font-bold text-center">
         DevCommu ถูกก่อตั้งขึ้น ด้วยจุดประสงค์ ที่จะมอบและส่งต่อความรู้
         ส่งต่อโอกาส ในด้านเทคโนโลยี และการเขียนโปรแกรม ให้กับนักเรียน
         โดยมีจุดมุ่งหมายที่จะเป็นเหมือน FreeCodeCamp ที่มีเนื้อหาที่ดี
         และมีคุณภาพ แต่เข้าถึงได้ง่ายสำหรับเด็กที่ไม่ได้เก่งภาษาอังกฤษ
-        โดยไม่มีค่าใช้จ่ายใดๆทั้งสิ้น<br></br> รวมทั้งเป็นสังคม เป็นพื้นที่
+        โดยไม่มีค่าใช้จ่ายใดๆทั้งสิ้นรวมทั้งเป็นสังคม เป็นพื้นที่
         สำหรับผู้ที่รักในการแบ่งปันความรู้ และการเรียนรู้ รวมถึงทำโปรเจ็คสนุกๆ
         ผ่านการทำเนื้อหาบน YouTube ร่วมกับผู้เชี่ยวชาญ
-        จัดค่ายร่วมกับโรงเรียนและค่ายอื่นๆ<br></br> ทำโปรเจ็คร่วมกันกับสมาชิก
+        จัดค่ายร่วมกับโรงเรียนและค่ายอื่นๆทำโปรเจ็คร่วมกันกับสมาชิก
         และไปแข่งขันกระชับมิตร
       </p>
-    </>
+    </div>
   );
 }
 
@@ -166,21 +166,21 @@ export function PeopleCard(props: { people: AboutUs }) {
         <motion.div
           key={index}
           whileHover={{ scale: 1.1 }}
-          className="w-full h-[15rem] p-5  flex space-x-5"
+          className="md:w-full w-96 md:h-[15rem] h-56 p-5  flex space-x-5"
         >
           <div
             className={`h-full w-48 bg-cover bg-center rounded-lg`}
             style={{ backgroundImage: `url(${people.img})` }}
           ></div>
           <div className="w-full ">
-            <p className=" text-start font-lineSansTH text-primary font-bold text-[18px]">
+            <p className=" text-start font-lineSansTH text-primary font-bold md:text-lg text-sm">
               {people.role}
             </p>
-            <p className="text-start font-lineSansTH font-[900] text-[39px]">
+            <p className="text-start font-lineSansTH font-[900] md:text-3xl text-xl">
               {people.name}
             </p>
-            <div className="flex font-lineSansTH font-bold text-[#989DA5] text-[20px] text-start">
-              <p className="text-[33px]">“</p>
+            <div className="flex font-lineSansTH font-bold text-[#989DA5] text-sm md:text-lg text-start">
+              <p className="md:text-3xl text-xl">“</p>
               <p className="mt-3">{people.description}</p>
             </div>
           </div>
@@ -196,7 +196,7 @@ export function SlidingPeople() {
       gradient={false}
       speed={50}
       pauseOnHover={true}
-      className={`w-screen mb-32 mt-16`}
+      className={`w-screen mb-32 md:mt-16`}
     >
       {About?.map((people, index) => (
         <motion.div
@@ -204,7 +204,7 @@ export function SlidingPeople() {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: index * 0.2 }}
-          className=" w-[40rem]  mt-20  rounded-3xl  mx-5 group"
+          className=" md:w-[40rem]  mt-20  rounded-3xl  mx-5 group"
         >
           <PeopleCard people={people} />
         </motion.div>
