@@ -1,6 +1,12 @@
 ---
 import HomePageComponent from "./HomePageComponent";
-import { VideoExample, MoreDetail, FeedBack } from "./HomePageComponent";
+import {
+  VideoExample,
+  MoreDetail,
+  FeedBack,
+  MoreDetailPopup,
+  MarqueePoster,
+} from "./HomePageComponent";
 import Footer from "./Footer";
 ---
 
@@ -12,7 +18,10 @@ import Footer from "./Footer";
     text3={"มาเจอกันเพื่อพัฒนาตนเเอง"}
   />
   <VideoExample />
+
   <MoreDetail client:load />
+  <MarqueePoster client:only="react" />
+  <MoreDetailPopup client:load />
   <FeedBack client:load />
   <Footer client:visible />
 </section>

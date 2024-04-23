@@ -1,7 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Marquee from "react-fast-marquee";
 
-import { MoreDetailList } from "~/data/data";
+import { MoreDetailList, posterData } from "~/data/data";
 
 interface Text {
   text1: String;
@@ -20,7 +21,7 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
   const side3 = useTransform(scrollYProgress, [0, 1], ["120%", "200%"]);
 
   return (
-    <section id="Home"  className="flex flex-col items-center">
+    <section id="Home" className="flex flex-col items-center">
       <section className="mt-20 w-full flex flex-col items-center">
         <div className="h-16 w-32 bg-no-repeat  bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
         <section className="font-lineSansTH_XB text-2xl sm:text-3xl md:mb-3 mb-1 md:text-4xl lg:text-5xl text-center text-cutoff">
@@ -39,15 +40,15 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
         {/*SideBar effect Scrolling */}
         <motion.section
           style={{ x: side1 }}
-          className={`  invisible fixed top-[13%] w-[50%] h-96 bg-[url('/images/keyboard1.png')] bg-contain bg-no-repeat md:visible`}
+          className={`  hidden fixed top-[13%] w-[50%] h-96 bg-[url('/images/keyboard1.png')] bg-contain bg-no-repeat md:block`}
         ></motion.section>
         <motion.section
           style={{ x: side2 }}
-          className={` invisible fixed top-[25%] h-96 w-[50%] bg-[url('/images/arduino1.png')] bg-contain bg-no-repeat md:visible`}
+          className={` hidden fixed top-[25%] h-96 w-[50%] bg-[url('/images/arduino1.png')] bg-contain bg-no-repeat md:block`}
         ></motion.section>
         <motion.section
           style={{ x: side3 }}
-          className={` invisible fixed top-[20%] h-20 w-[50%] bg-[url('/images/python.png')] bg-contain bg-no-repeat md:visible`}
+          className={` hidden fixed top-[20%] h-20 w-[50%] bg-[url('/images/python.png')] bg-contain bg-no-repeat md:block`}
         ></motion.section>
       </section>
     </section>
@@ -65,13 +66,40 @@ export function VideoExample() {
   );
 }
 
+export function MarqueePoster() {
+  return (
+    <section className=" flex space-x-4 md:h-96 h-60 w-[90%] mx-auto bg-zinc-100">
+      <Marquee
+        gradient={false}
+        speed={60}
+        pauseOnHover={true}
+        className="space-x-4"
+      >
+        {posterData.map((poster, index) => {
+          return (
+            <div
+              key={index}
+              className=" md:h-96 md:w-96 h-60 w-60 mx-3 bg-white"
+            >
+              <div
+                className=" bg-cover bg center h-full w-full"
+                style={{ backgroundImage: `url(${poster.img})` }}
+              ></div>
+            </div>
+          );
+        })}
+      </Marquee>
+    </section>
+  );
+}
+
 export function MoreDetail() {
   return (
     <section>
       <section className="md:flex md:space-x-10 space-y-3  w-[90%] mx-auto my-10 ">
         <section className="flex md:w-[50%] w-full text-start items-start">
           <section className="  w-full font-lineSansTH md:space-y-5 font-bold md:text-5xl text-2xl">
-            <p>เมื่อหลักสูตรปัจจุบัน</p> 
+            <p>เมื่อหลักสูตรปัจจุบัน</p>
             <p>อาจตามไม่ทันโลกยุคดิจิทัล</p>
           </section>
         </section>
@@ -79,8 +107,8 @@ export function MoreDetail() {
           <section className="  w-full text-[#64748B] font-lineSansTH text-sm md:text-xl">
             เทคโนโลยีปัญญาประดิษฐ์ (AI) หุ่นยนต์ (Robotics)หรือ
             Metaverseเข้ามามีบทบาท โลกทุกวันนี้หมุนเร็วมาก
-            ขณะเดียวกันเด็กไทยที่สนใจสาขานี้ประสบปัญหาอุปสรรคทางภาษา
-            และ กระบวนการคิดในห้องเรียนที่เน้นการท่องจำ
+            ขณะเดียวกันเด็กไทยที่สนใจสาขานี้ประสบปัญหาอุปสรรคทางภาษา และ
+            กระบวนการคิดในห้องเรียนที่เน้นการท่องจำ
             เราจึงพยายามนำเสนอการเรียนในด้านที่ใหม่กว่า
           </section>
         </section>
@@ -106,28 +134,33 @@ export function MoreDetail() {
           </div>
         </section>
       </section> */}
-      <section className="w-[90%] mx-auto rounded-lg min-h-[30vh] px-10 py-10  mt-10 bg-[#E2E8F0]">
-        <div className=" mb-4 font-lineSansTH font-bold text-[30px] text-start">
-          ฝากนักเรียนให้คิดและลงมือทำ<br></br>ผ่าน Project Based Learning
-        </div>
-        <div className="flex space-x-9 my-8 relative overflow-hidden">
-          {MoreDetailList.map((item, index) => {
-            if (index == 3) return;
-            return (
-              <MoreDetailCard
-                key={index}
-                detail={item}
-                index={index}
-              ></MoreDetailCard>
-            );
-          })}
-          <MoreDetailCard3
-            key={3}
-            detail={MoreDetailList[3]}
-            index={3}
-          ></MoreDetailCard3>
-        </div>
-      </section>
+    </section>
+  );
+}
+
+export function MoreDetailPopup() {
+  return (
+    <section className="w-[90%] md:block hidden md:h-auto   mx-auto rounded-lg h-0 px-10 py-10  mt-10 bg-[#E2E8F0]">
+      <div className=" mb-4 font-lineSansTH font-bold text-[30px] text-start">
+        ฝากนักเรียนให้คิดและลงมือทำ<br></br>ผ่าน Project Based Learning
+      </div>
+      <div className="flex space-x-9 my-8 relative overflow-hidden">
+        {MoreDetailList.map((item, index) => {
+          if (index == 3) return;
+          return (
+            <MoreDetailCard
+              key={index}
+              detail={item}
+              index={index}
+            ></MoreDetailCard>
+          );
+        })}
+        <MoreDetailCard3
+          key={3}
+          detail={MoreDetailList[3]}
+          index={3}
+        ></MoreDetailCard3>
+      </div>
     </section>
   );
 }
