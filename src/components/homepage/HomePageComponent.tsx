@@ -13,25 +13,25 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end center"],
+    offset: ["start start", "end end"],
   });
-  const side1 = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
-  const side2 = useTransform(scrollYProgress, [0, 1], ["100%", "200%"]);
-  const side3 = useTransform(scrollYProgress, [0, 1], ["100%", "200%"]);
+  const side1 = useTransform(scrollYProgress, [0, 1], ["-79%", "-200%"]);
+  const side2 = useTransform(scrollYProgress, [0, 1], ["120%", "200%"]);
+  const side3 = useTransform(scrollYProgress, [0, 1], ["120%", "200%"]);
 
   return (
-    <section id="Home" ref={ref} className="flex flex-col items-center">
+    <section id="Home"  className="flex flex-col items-center">
       <section className="mt-20 w-full flex flex-col items-center">
-        <div className="h-16 w-80 bg-no-repeat mb-6 bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
-        <section className="font-lineSansTH_XB text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center text-cutoff">
-          <h1>
+        <div className="h-16 w-32 bg-no-repeat  bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
+        <section className="font-lineSansTH_XB text-2xl sm:text-3xl md:mb-3 mb-1 md:text-4xl lg:text-5xl text-center text-cutoff">
+          <h1 className="md:mb-5">
             {text1} <span className="text-primary"> {text2}</span>
           </h1>
-          <h1 className="text-2xl sm:text-4xl">{text3}</h1>
+          <h1 className="">{text3}</h1>
         </section>
         <motion.button
           whileHover={{ scale: 1.04 }}
-          className="h-10 p-auto px-7 font-lineSansTH font-bold text-white bg-primary rounded-full my-5 hover:bg-[#c96380] transition-colors duration-200"
+          className="h-10 p-auto px-7 font-lineSansTH font-bold text-white bg-primary rounded-full my-3 hover:bg-[#c96380] transition-colors duration-200"
         >
           สนใจจัดกิจกรรม
         </motion.button>
@@ -39,15 +39,15 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
         {/*SideBar effect Scrolling */}
         <motion.section
           style={{ x: side1 }}
-          className={`hidden sm:fixed top-[13%] w-[50%] h-96 bg-[url('/images/keyboard1.png')] bg-contain bg-no-repeat`}
+          className={`  invisible fixed top-[13%] w-[50%] h-96 bg-[url('/images/keyboard1.png')] bg-contain bg-no-repeat md:visible`}
         ></motion.section>
         <motion.section
           style={{ x: side2 }}
-          className={`hidden sm:fixed top-[25%] h-96 w-[50%] bg-[url('/images/arduino1.png')] bg-contain bg-no-repeat`}
+          className={` invisible fixed top-[25%] h-96 w-[50%] bg-[url('/images/arduino1.png')] bg-contain bg-no-repeat md:visible`}
         ></motion.section>
         <motion.section
           style={{ x: side3 }}
-          className={`hidden sm:fixed top-[20%] h-20 w-[50%] bg-[url('/images/python.png')] bg-contain bg-no-repeat`}
+          className={` invisible fixed top-[20%] h-20 w-[50%] bg-[url('/images/python.png')] bg-contain bg-no-repeat md:visible`}
         ></motion.section>
       </section>
     </section>
@@ -68,23 +68,24 @@ export function VideoExample() {
 export function MoreDetail() {
   return (
     <section>
-      <section className="flex space-x-10  w-[90%] mx-auto my-10 ">
-        <section className="flex w-[50%] text-start items-start">
-          <section className="  w-full font-lineSansTH font-bold text-[48px]">
-            เมื่อหลักสูตรปัจจุบัน<br></br> อาจตามไม่ทันโลกยุคดิจิทัล
+      <section className="md:flex md:space-x-10 space-y-3  w-[90%] mx-auto my-10 ">
+        <section className="flex md:w-[50%] w-full text-start items-start">
+          <section className="  w-full font-lineSansTH md:space-y-5 font-bold md:text-5xl text-2xl">
+            <p>เมื่อหลักสูตรปัจจุบัน</p> 
+            <p>อาจตามไม่ทันโลกยุคดิจิทัล</p>
           </section>
         </section>
-        <section className="w-[50%]   items-start text-start">
-          <section className="  w-full text-[#64748B] font-lineSansTH text-[20px]">
-            เทคโนโลยีปัญญาประดิษฐ์ (AI) หุ่นยนต์ (Robotics)<br></br> หรือ
-            Metaverseเข้ามามีบทบาท โลกทุกวันนี้หมุนเร็วมาก <br></br>
+        <section className="md:w-[50%]   items-start text-start">
+          <section className="  w-full text-[#64748B] font-lineSansTH text-sm md:text-xl">
+            เทคโนโลยีปัญญาประดิษฐ์ (AI) หุ่นยนต์ (Robotics)หรือ
+            Metaverseเข้ามามีบทบาท โลกทุกวันนี้หมุนเร็วมาก
             ขณะเดียวกันเด็กไทยที่สนใจสาขานี้ประสบปัญหาอุปสรรคทางภาษา
-            <br></br>และ กระบวนการคิดในห้องเรียนที่เน้นการท่องจำ
-            <br></br>เราจึงพยายามนำเสนอการเรียนในด้านที่ใหม่กว่า
+            และ กระบวนการคิดในห้องเรียนที่เน้นการท่องจำ
+            เราจึงพยายามนำเสนอการเรียนในด้านที่ใหม่กว่า
           </section>
         </section>
       </section>
-      <section className="flex space-x-10  w-[90%] mx-auto ">
+      {/* <section className="flex space-x-10  w-[90%] mx-auto ">
         <section className=" relative overflow-hidden w-[50%] min-h-[50vh] bg-[#E2E8F0] py-10 px-10 text-start rounded-lg items-start">
           <div className=" mb-4 font-lineSansTH font-bold text-[30px]">
             สร้างสื่อการสอนการเขียน<br></br>เข้าถึงการสอนได้ทุกที่
@@ -104,7 +105,7 @@ export function MoreDetail() {
             สร้างคอมมูนิตี้แบบไฮบริดจ์ <br></br>ในการเรียนรู้ร่วมกัน
           </div>
         </section>
-      </section>
+      </section> */}
       <section className="w-[90%] mx-auto rounded-lg min-h-[30vh] px-10 py-10  mt-10 bg-[#E2E8F0]">
         <div className=" mb-4 font-lineSansTH font-bold text-[30px] text-start">
           ฝากนักเรียนให้คิดและลงมือทำ<br></br>ผ่าน Project Based Learning
@@ -242,7 +243,7 @@ export function FeedBack() {
   var now = 0;
   console.log(number);
   return (
-    <section className=" mt-40 w-[90%] mx-auto min-h-[100vh] px-10 py-10 text-start">
+    <section className="  mt-40 w-[90%] mx-auto min-h-[100vh] px-10 py-10 text-start">
       <div className=" font-lineSansTH text-primary text-[22px]">รีวิว</div>
       <div className=" font-lineSansTH font-bold text-[44px]">
         น้องๆ นักเรียนในโครงการ<br></br>พูดถึงเราว่ายังไงบ้าง?

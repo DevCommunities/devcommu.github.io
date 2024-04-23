@@ -14,7 +14,7 @@ export default {
 			},
 			colors: {
 				'primary': '#E57192',
-				'secondary': '#F6F6F6',
+				'secondary': '#F4F4F4',
 				'cutoff': '#000000',
 				'accent-primary': '#E57192',
 				'accent-secondary': '#F6F6F6',
