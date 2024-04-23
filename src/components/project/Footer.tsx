@@ -26,14 +26,14 @@ export default function Footer() {
 
   return (
     <div>
-      <section className="mb-32 pt-60">
+      <section className="mb-28 pt-60">
         <motion.button
           onClick={handleClickScrollHome}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           className=" mx-auto  md:h-36 md:w-36 h-20 w-20 bg-[url('/images/footer/DevKey.png')] bg-contain bg-no-repeat bg-center"
         ></motion.button>
-        <section className="font-lineSansTH font-bold text-[60px] text-white">
+        <section className="font-lineSansTH font-bold md:text-5xl md:space-x-3 text-3xl   text-white">
           <h1>สนใจกิจกรรมหรอ?</h1>
           <h1 className="text-primary">
             กดปุ่มข้างบน<span className="text-white"> ได้เลย!</span>

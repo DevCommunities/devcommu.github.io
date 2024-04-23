@@ -34,7 +34,7 @@ export default function ProjectPageComponent(props: ProjectPageComponentProps) {
     <section>
       <section className="mt-20">
         <div className=" h-4 max-w-80 bg-no-repeat mb-6 mx-auto bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
-        <section className="font-lineSansTH_XB text-[60px]">
+        <section className="font-lineSansTH_XB md:text-5xl text-2xl md:space-y-3">
           <h1>
             {text1} <span className="text-primary"> {text2}</span>
           </h1>
@@ -84,12 +84,12 @@ export function ProjectCard(props: {
 
 export function SlidingProjects({ className }: { className?: string }) {
   return (
-    <div className="sticky top-20 z-10">
+    <div className="sticky top-20 z-10 md:mt-10">
       <Marquee
         gradient={false}
         speed={50}
         pauseOnHover={true}
-        className={`w-screen${className ?? ""}`}
+        className={`w-screen h-96${className ?? ""}`}
       >
         {SlideProjectList?.map((project, index) => (
           <motion.div
@@ -97,7 +97,7 @@ export function SlidingProjects({ className }: { className?: string }) {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
-            className="w-72 h-96 bg-white rounded-3xl shadow-lg mx-5 group"
+            className="md:w-72 md:h-96 h-72 w-56 bg-white rounded-3xl shadow-lg md:mx-5 mx-2  group"
           >
             <ProjectCard project={project} />
           </motion.div>
@@ -132,37 +132,41 @@ export function SlideProjectCard(props: { project: SlideProjectProps }) {
   const [ref, inView] = useInView({
     rootMargin: "-420px 0px",
   });
+  const isMediumScreen = () => {
+    const mdQuery = window.matchMedia("(min-width: 768px)");
+    return mdQuery.matches;
+  };
 
   return (
     <div className="flex  relative">
       <motion.div
         initial={{ x: 20, opacity: 0 }}
         animate={{ opacity: inView ? 1 : 0 }}
-        className="  h-full text-end text-white -mr-14 py-4 font-lineSansTH font-bold  "
+        className="  h-full text-end text-white md:-mr-14 -ml-20  py-4 font-lineSansTH font-bold  "
       >
-        <p className=" text-lg">{props.project.date}</p>
-        <p className=" text-lg">{props.project.month}</p>
-        <p className=" text-lg">{props.project.year}</p>
+        <p className=" md:text-lg text-sm">{props.project.date}</p>
+        <p className=" md:text-lg text-sm">{props.project.month}</p>
+        <p className=" md:text-lg text-sm">{props.project.year}</p>
       </motion.div>
       <motion.div
         ref={ref}
         initial={{ x: 0 }} // Initial animation state
-        animate={{ x: inView ? 90 : 0 }} // Animate when in view
+        animate={{ x: inView ? (isMediumScreen() ? 90 : 30) : 0 }} // Animate when in view
         transition={{ duration: 0.5 }} // Animation duration
       >
-        <motion.div className="flex space-x-12 mb-10 snap-center">
+        <motion.div className="md:flex md:space-x-12 w md:max-w-full overflow-hidden  space-x-3 mb-10 snap-center">
           <div
-            className=" h-56 w-[30rem] rounded-lg bg-center bg-cover bg-no-repeat "
+            className=" md:h-56 md:w-[30rem] h-32 sm:h-52  w-full  rounded-lg bg-center bg-cover bg-no-repeat "
             style={{ backgroundImage: `url(${props.project.image})` }}
           ></div>
           <div className="py-3">
-            <h1 className="font-lineSansTH text-primary font-bold text-[18px]">
+            <h1 className="font-lineSansTH text-primary font-bold md:text-lg text-sm">
               {props.project.type}
             </h1>
-            <h1 className="font-lineSansTH text-white font-bold text-[30px]">
+            <h1 className="font-lineSansTH text-white font-bold md:text-2xl text-lg">
               {props.project.title}
             </h1>
-            <button className="h-8 min-w-24 px-4 bg-[#334155] mt-7 rounded-full transition-colors hover:bg-[#475d78]">
+            <button className="h-8 min-w-24 px-4 bg-[#334155] md:mt-7 mt-2 rounded-full transition-colors hover:bg-[#475d78]">
               <a href={`/project/${Slug(props.project.slug)}`}>
                 <div className="flex items-center space-x-3">
                   <div className="h-4 w-3 bg-[url('/images/project/arrow.png')] bg-contain bg-center bg-no-repeat"></div>
@@ -194,10 +198,10 @@ export function SlideBlackArea() {
         <section className=" bg-gradient-to-t from-[#1E1E1E] to-transparent min-h-[20vh]"></section>
         <section className=" bg-[#1E1E1E]  py-10">
           <div className="">
-            <div className="font-bold font-lineSansTH_XB text-[42px]">
+            <div className="font-bold font-lineSansTH_XB md:text-4xl text-2xl">
               พวกเราผ่านอะไรมาแล้วบ้าง
             </div>
-            <div className="font-lineSansTH font-thin text-[#FFBE5C] text-[30px]">
+            <div className="font-lineSansTH font-thin text-[#FFBE5C] md:text-3xl text-xl">
               ลองเลื่อนอ่านเล่นๆได้นะ
             </div>
           </div>
@@ -207,8 +211,8 @@ export function SlideBlackArea() {
           style={{ scrollbarWidth: "none" }}
           className="bg-[#1E1E1E] flex space-x-10 p-10 snap-y overflow-y-scroll max-h-screen snap-mandatory"
         >
-          <div className="  min-w-[13%] ">
-            <div className=" bg-[#616161] mx-auto w-1 h-screen left-24  rounded-full absolute">
+          <div className="  md:min-w-[13%] ">
+            <div className=" bg-[#616161] mx-auto w-1 h-screen md:left-24  rounded-full absolute">
               <motion.div className="h-full" style={{ y: slide }}>
                 <div className="bg-[#FF326C] h-3 w-3 rounded-full -mx-[0.23rem] z-50 absolute"></div>
                 {/* {SlideProjectList.map((project, index) => {
