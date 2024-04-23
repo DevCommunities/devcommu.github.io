@@ -248,7 +248,7 @@ export function SlideBlackArea() {
           </div>
         </section>
       </div>
-      <div className="bg-[#1E1E1E]">
+      <div className="bg-[#1E1E1E] pt-96">
         <Footer></Footer>
       </div>
     </div>

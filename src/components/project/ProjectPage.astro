@@ -1,7 +1,7 @@
 ---
 import ProjectPageComponent from "./ProjectPageComponent";
 import { SlidingProjects, SlideBlackArea } from "./ProjectPageComponent";
-import Footer from "../homepage/Footer";
+import Footer from "./Footer";
 ---
 
 <header class="bg-secondary pl-8 pt-8 pr-8 text-center rounded-md">
@@ -15,7 +15,7 @@ import Footer from "../homepage/Footer";
     />
   </section>
 </header>
-<section class="text-center overflow-hidden">
+<section class="text-center">
   <SlidingProjects className="mt-12" client:only="react" />
   <SlideBlackArea client:load />
 </section>
