@@ -31,7 +31,7 @@ export default function Footer() {
           onClick={handleClickScrollHome}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className=" mx-auto  h-36 w-36 bg-[url('/images/footer/DevKey.png')] bg-contain bg-no-repeat bg-center"
+          className=" mx-auto  md:h-36 md:w-36 h-20 w-20 bg-[url('/images/footer/DevKey.png')] bg-contain bg-no-repeat bg-center"
         ></motion.button>
         <section className="font-lineSansTH font-bold text-[60px] text-white">
           <h1>สนใจกิจกรรมหรอ?</h1>
@@ -42,23 +42,23 @@ export default function Footer() {
       </section>
       <motion.section
         style={{ x: side1 }}
-        className={`fixed top-[30%]  h-[45%] w-[50%] bg-20 bg-[url('/images/footer/arduino2.png')] bg-contain bg-no-repeat`}
+        className={`fixed top-[30%] hidden md:block  h-[45%] w-[50%] bg-20 bg-[url('/images/footer/arduino2.png')] bg-contain bg-no-repeat`}
       ></motion.section>
       <motion.section
         style={{ x: side2 }}
-        className={`fixed top-[20%] h-[70%] w-[100%] bg-20 bg-[url('/images/footer/keyboard2.png')] bg-contain bg-no-repeat`}
+        className={`fixed top-[20%] hidden md:block h-[70%] w-[100%] bg-20 bg-[url('/images/footer/keyboard2.png')] bg-contain bg-no-repeat`}
       ></motion.section>
       <motion.section
         style={{ x: side3 }}
-        className={`fixed top-[70%]  h-16 w-full bg-20 bg-[url('/images/python.png')] bg-contain bg-no-repeat`}
+        className={`fixed top-[70%] hidden md:block  h-16 w-full bg-20 bg-[url('/images/python.png')] bg-contain bg-no-repeat`}
       ></motion.section>
       <motion.section
         style={{ y: side4 }}
-        className={`fixed top-[3%] left-[20%]  h-[70%] w-full bg-20 bg-[url('/images/footer/devCommuPage.png')] bg-contain bg-no-repeat`}
+        className={`fixed top-[3%] hidden md:block left-[20%]  h-[70%] w-full bg-20 bg-[url('/images/footer/devCommuPage.png')] bg-contain bg-no-repeat`}
       ></motion.section>
       <motion.section
         style={{ y: side5 }}
-        className={`fixed top-[3%] left-[47%]  h-[20%] w-full bg-20 bg-[url('/images/footer/macTerminal.png')] bg-contain bg-no-repeat`}
+        className={`fixed top-[3%] hidden md:block left-[47%]  h-[20%] w-full bg-20 bg-[url('/images/footer/macTerminal.png')] bg-contain bg-no-repeat`}
       ></motion.section>
       <section className="flex justify-between items-center pb-5">
         <div className="h-24 w-32  mx-5   bg-[url('images/project/WhiteDev.png')] bg-no-repeat bg-center bg-contain"></div>

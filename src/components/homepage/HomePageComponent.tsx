@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Marquee from "react-fast-marquee";
 
 import { MoreDetailList, posterData } from "~/data/data";
@@ -271,55 +271,85 @@ const DataFB: FBPage[] = [
   },
 ];
 
-export function FeedBack() {
+export function FeedBackPage() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % DataFB.length);
+        setIsTransitioning(false);
+      }, 1000); // Change image after 1 second (transition duration)
+    }, 4000); // Change image every 2 seconds
+
+    return () => clearInterval(interval);
+  }, [DataFB]);
+
   const number = DataFB.length / 3;
   var now = 0;
   console.log(number);
   return (
-    <section className="  mt-40 w-[90%] mx-auto min-h-[100vh] px-10 py-10 text-start">
-      <div className=" font-lineSansTH text-primary text-[22px]">รีวิว</div>
-      <div className=" font-lineSansTH font-bold text-[44px]">
-        น้องๆ นักเรียนในโครงการ<br></br>พูดถึงเราว่ายังไงบ้าง?
+    <section className=" mt-10 w-[90%] mx-auto  pt-10 text-start">
+      <div className=" font-lineSansTH text-primary md:text-2xl text-lg">
+        รีวิว
       </div>
-      <section className="flex  min-h-[50vh] w-full my-10 space-x-5 justify-center">
-        <section className=" w-[30%]  min-h-[40vh]">
+      <div className=" font-lineSansTH md:space-y-3 font-bold md:text-5xl text-2xl">
+        <p>น้องๆ นักเรียนในโครงการ</p>
+        <p>พูดถึงเราว่ายังไงบ้าง?</p>
+      </div>
+      <section className="md:hidden block min-h-[25vh] mt-5 ">
+        <div
+          className={`${isTransitioning ? "opacity-0" : "opacity-100"} transition-opacity duration-200`}
+        >
+          <FeedBackCard
+            name={DataFB[currentIndex].name}
+            social={DataFB[currentIndex].social}
+            image={DataFB[currentIndex].image}
+            feedback={DataFB[currentIndex].feedback}
+          ></FeedBackCard>
+        </div>
+      </section>
+      <section className="flex invisible md:visible md:max-h-screen max-h-0 overflow-hidden w-full my-10 space-x-5 justify-center">
+        <section className="w-1/3">
           {DataFB.map((item, index) => {
             if (index >= (number % 3 == 0 ? number - 1 : number)) return;
             now = index;
             return (
-              <FeedBackPage
+              <FeedBackCard
                 key={index}
                 name={item.name}
                 social={item.social}
                 image={item.image}
                 feedback={item.feedback}
-              ></FeedBackPage>
+              ></FeedBackCard>
             );
           })}
         </section>
-        <section className=" w-[30%]  min-h-[40vh]">
+        <section className=" w-1/3 ">
           {DataFB.map((item, index) => {
             return index > now && index <= now + number ? (
-              <FeedBackPage
+              <FeedBackCard
                 key={index}
                 name={item.name}
                 social={item.social}
                 image={item.image}
                 feedback={item.feedback}
-              ></FeedBackPage>
+              ></FeedBackCard>
             ) : null;
           })}
         </section>
-        <section className=" w-[30%]  min-h-[40vh]">
+        <section className=" w-1/3 ">
           {DataFB.map((item, index) => {
             return index >= DataFB.length - number ? (
-              <FeedBackPage
+              <FeedBackCard
                 key={index}
                 name={item.name}
                 social={item.social}
                 image={item.image}
                 feedback={item.feedback}
-              ></FeedBackPage>
+              ></FeedBackCard>
             ) : null;
           })}
         </section>
@@ -335,18 +365,18 @@ interface FBPage {
   image: String;
 }
 
-export function FeedBackPage({ feedback, name, social, image }: FBPage) {
+export function FeedBackCard({ feedback, name, social, image }: FBPage) {
   return (
     <motion.section
       whileHover={{ scale: 1.05 }}
-      className="w-full h-auto bg-white font-lineSansTH rounded-xl px-6 py-6 mb-5"
+      className="w-full h-auto bg-white font-lineSansTH   rounded-xl px-6 py-6 mb-5"
     >
-      <div className=" mb-5 text-[22px]">{feedback}</div>
+      <div className=" mb-5 md:text-xl text-lg">{feedback}</div>
       <div className="flex space-x-6 items-center ">
         <div className="h-10 w-10 rounded-full bg-primary"></div>
         <div>
-          <div className="font-bold text-[22px]">{name}</div>
-          <div className="font-[18px] text-[#989DA5]">@{social}</div>
+          <div className="font-bold md:text-xl text-lg">{name}</div>
+          <div className="md:text-lg text-[#989DA5]">@{social}</div>
         </div>
       </div>
     </motion.section>
