@@ -104,12 +104,16 @@ export function MoreDetail() {
           </section>
         </section>
         <section className="md:w-[50%]   items-start text-start">
-          <section className="  w-full text-[#64748B] font-lineSansTH text-sm md:text-xl">
-            เทคโนโลยีปัญญาประดิษฐ์ (AI) หุ่นยนต์ (Robotics)หรือ
+          <section className="w-full text-[#64748B] font-lineSansTH text-sm md:text-xl text-left">
+            เทคโนโลยีปัญญาประดิษฐ์ (AI) หุ่นยนต์ (Robotics) หรือ
             Metaverseเข้ามามีบทบาท โลกทุกวันนี้หมุนเร็วมาก
-            ขณะเดียวกันเด็กไทยที่สนใจสาขานี้ประสบปัญหาอุปสรรคทางภาษา และ
-            กระบวนการคิดในห้องเรียนที่เน้นการท่องจำ
+            ขณะเดียวกันเด็กไทยที่สนใจสาขาวิชาชีพเหล่านี้ประสบปัญหาอุปสรรคทางภาษา
+            และการเดินตามกระบวนการคิดในห้องเรียนที่เน้นการท่องจำ
             เราจึงพยายามนำเสนอการเรียนในด้านที่ใหม่กว่า
+            ที่เน้นการสร้างสรรค์และคิดเชิงออกแบบ ลงมือทำ
+            และเรียนรู้จากประสบการณ์จริง
+            เพื่อให้น้องๆได้รับรู้ถึงความสนุกของการเรียนรู้
+            รวมถึงสร้างการพบเจอกับเพื่อนใหม่ ที่มีความสนใจเดียวกัน
           </section>
         </section>
       </section>
@@ -229,46 +233,35 @@ export interface DetailProps {
 const DataFB: FBPage[] = [
   {
     feedback:
-      "บรรยากาศของค่ายอบอุ่นและเป็นกันเอง ทุกคนที่ผมได้พูดคุยด้วย ตั้งแต่เจ้าหน้าที่ไปจนถึงผู้เข้าร่วม ต่างก็ให้ความช่วยเหลือและเข้าถึงได้ง่าย",
-    name: "Eva Elle",
-    social: "@evaelle",
-    image: "",
+      '"ได้ลองทำโปรเจคที่อยากทำ\nโดยมีพี่ๆคอยซัพพอร์ต\nทำให้การทำโปรเจคต์ไม่น่ากลัว"',
+    name: "ทันรวี คำแหงพล",
+    social:
+      "นักเรียนในโครงการความร่วมมือระหว่าง DevComu และโรงเรียนนวมินทร์ทราชูทิศ สตรีวิทยา2",
+    image: "/reviews/0.png",
   },
   {
     feedback:
-      "วิทยากรแสดงความอดทนและเข้าใจตลอดทั้งโปรแกรม สร้างสภาพแวดล้อมการเรียนรู้ที่สนับสนุน",
-    name: "John Doe",
-    social: "@johndoe",
-    image: "",
+      "ได้ลองทำโปรเจคที่อยากทำ\nโดยมีพี่ๆคอยซัพพอร์ต\nทำให้การทำโปรเจคต์ไม่น่ากลัว",
+    name: "ทันรวี คำแหงพล",
+    social:
+      "นักเรียนในโครงการความร่วมมือระหว่าง DevComu และโรงเรียนนวมินทร์ทราชูทิศ สตรีวิทยา2",
+    image: "/reviews/0.png",
   },
   {
     feedback:
-      "ผู้เข้าร่วมมีส่วนร่วมในกิจกรรมต่างๆ อย่างสร้างสรรค์และทำงานร่วมกัน ก่อให้เกิดความรู้สึกเป็นอันหนึ่งอันเดียวกัน",
-    name: "Jane Smith",
-    social: "@janesmith",
-    image: "",
+      "ได้ลองทำโปรเจคที่อยากทำ\nโดยมีพี่ๆคอยซัพพอร์ต\nทำให้การทำโปรเจคต์ไม่น่ากลัว",
+    name: "ทันรวี คำแหงพล",
+    social:
+      "นักเรียนในโครงการความร่วมมือระหว่าง DevComu และโรงเรียนนวมินทร์ทราชูทิศ สตรีวิทยา2",
+    image: "/reviews/0.png",
   },
-  {
-    feedback:
-      "โปรแกรมค่ายอำนวยความสะดวกในการสื่อสารแบบเปิดเผยและส่งเสริมการให้ความช่วยเหลือซึ่งกันและกันระหว่างผู้เข้าร่วม นำไปสู่ประสบการณ์โดยรวมที่ดี",
-    name: "Michael Lee",
-    social: "@michaellee",
-    image: "",
-  },
-  {
-    feedback:
-      "โปรแกรมค่ายอำนวยความสะดวกในการสื่อสารแบบเปิดเผยและส่งเสริมการให้ความช่วยเหลือซึ่งกันและกันระหว่างผู้เข้าร่วม นำไปสู่ประสบการณ์โดยรวมที่ดี",
-    name: "Sarah Williams",
-    social: "@sarahwilliams",
-    image: "",
-  },
-  {
-    feedback:
-      "ผู้จัดงานค่ายประสบความสำเร็จในการสร้างบรรยากาศที่ครอบคลุมและต้อนรับ  ซึ่งผู้เข้าร่วมรู้สึกสบายใจที่จะติดต่อกับผู้อื่นและเรียนรู้จากวิทยากร",
-    name: "Suppawit SeeSagul",
-    social: "@supawit",
-    image: "",
-  },
+  // {
+  //   feedback:
+  //     "วิทยากรแสดงความอดทนและเข้าใจตลอดทั้งโปรแกรม สร้างสภาพแวดล้อมการเรียนรู้ที่สนับสนุน",
+  //   name: "John Doe",
+  //   social: "@johndoe",
+  //   image: "",
+  // },
 ];
 
 export function FeedBackPage() {
@@ -281,8 +274,8 @@ export function FeedBackPage() {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % DataFB.length);
         setIsTransitioning(false);
-      }, 1000); // Change image after 1 second (transition duration)
-    }, 4000); // Change image every 2 seconds
+      }, 750); // (transition duration)
+    }, 6000); // Change image every 2 seconds
 
     return () => clearInterval(interval);
   }, [DataFB]);
@@ -301,7 +294,9 @@ export function FeedBackPage() {
       </div>
       <section className="md:hidden block min-h-[25vh] mt-5 ">
         <div
-          className={`${isTransitioning ? "opacity-0" : "opacity-100"} transition-opacity duration-200`}
+          className={`${
+            isTransitioning ? "opacity-0" : "opacity-100"
+          } transition-opacity duration-200`}
         >
           <FeedBackCard
             name={DataFB[currentIndex].name}
@@ -359,10 +354,10 @@ export function FeedBackPage() {
 }
 
 interface FBPage {
-  feedback: String;
-  name: String;
-  social: String;
-  image: String;
+  feedback: string;
+  name: string;
+  social: string;
+  image: string;
 }
 
 export function FeedBackCard({ feedback, name, social, image }: FBPage) {
@@ -373,10 +368,10 @@ export function FeedBackCard({ feedback, name, social, image }: FBPage) {
     >
       <div className=" mb-5 md:text-xl text-lg">{feedback}</div>
       <div className="flex space-x-6 items-center ">
-        <div className="h-10 w-10 rounded-full bg-primary"></div>
+        <img src={image} className="h-20 w-20 rounded-full bg-primary" />
         <div>
           <div className="font-bold md:text-xl text-lg">{name}</div>
-          <div className="md:text-lg text-[#989DA5]">@{social}</div>
+          <div className="md:text-lg text-[#989DA5]">{social}</div>
         </div>
       </div>
     </motion.section>
