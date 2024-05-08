@@ -81,10 +81,15 @@ export function MarqueePoster() {
               key={index}
               className=" md:h-96 md:w-96 h-60 w-60 mx-3 bg-white"
             >
-              <div
-                className=" bg-cover bg center h-full w-full"
-                style={{ backgroundImage: `url(${poster.img})` }}
-              ></div>
+              {/* Optimize Image */}
+              <img
+                alt={`poster_${index}`}
+                loading="eager"
+                height={"300px"}
+                width={"300px"}
+                src={poster.img}
+                className="object-cover h-full w-full rounded-lg"
+              />
             </div>
           );
         })}
