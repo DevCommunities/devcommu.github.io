@@ -49,7 +49,6 @@ export function NavListContainer({
   return (
     <div className="flex items-center space-x-2 text-xs sm:text-sm">
       {children ? children : null}
-      <p>{currentPath}</p>
       {/* disabled if it's really too small to fix anything */}
       <div className="space-x-1 bg-[#E2E8F0] rounded-full px-1 xs:px-2 py-1 flex items-center">
         {/* Assuming you want these to be links */}
