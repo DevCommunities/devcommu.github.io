@@ -33,7 +33,11 @@ export default function ProjectPageComponent(props: ProjectPageComponentProps) {
   return (
     <section>
       <section className="mt-20">
-        <div className=" h-4 max-w-80 bg-no-repeat mb-6 mx-auto bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
+        <img
+          src="/images/DarkDevCommuWord.png"
+          alt="DarkDevCommuWord"
+          className="h-4 max-w-80 mb-6 mx-auto"
+        />
         <section className="font-lineSansTH_XB md:text-5xl text-2xl md:space-y-3">
           <h1>
             {text1} <span className="text-primary"> {text2}</span>
@@ -62,7 +66,8 @@ export function ProjectCard(props: {
       className={`h-full group ${props.className} font-lineSansTH text-center`}
     >
       <div
-        className="h-full bg-cover bg-center bg-no-repeat rounded-3xl group"
+        className={`
+        h-full bg-center bg-cover bg-no-repeat bg-primary rounded-3xl hover:bg-opacity-90 transition-all duration-500 hover:cursor-pointer`}
         style={{ backgroundImage: `url(${props.project.images.vertical})` }}
       >
         {/* explanation card */}
@@ -159,12 +164,11 @@ export function SlideProjectCard(props: { project: SlideProjectProps }) {
         transition={{ duration: 0.5 }} // Animation duration
       >
         <motion.div className="md:flex md:space-x-12 w md:max-w-full overflow-hidden  space-x-3 mb-10 snap-center">
-          <div
-            className=" md:h-56 md:w-[30rem] h-32 sm:h-52  w-full  rounded-lg bg-center bg-cover bg-no-repeat "
-            style={{
-              backgroundImage: `url(${props.project.images.horizontal})`,
-            }}
-          ></div>
+          <img
+            src={props.project.images.horizontal}
+            alt="project"
+            className="md:h-56 md:max-w-96 h-32 sm:h-52  w-full  rounded-lg bg-center bg-cover bg-no-repeat object-fill"
+          />
           <div className="py-3">
             <h1 className="font-lineSansTH text-primary font-bold md:text-lg text-sm">
               {props.project.type}
