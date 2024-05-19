@@ -27,7 +27,7 @@ export const About: AboutUs[] = [
         name: "พี่แท็ค",
         description:
           "นักศึกษาจุฬาลงกรณ์มหาวิทยาลัย คณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์เทคโนโลยีดิจิทัลและเทคโนโลยี",
-        role: "ติวเตอร์ Compettitive Programming",
+        role: "ติวเตอร์ Competitive Programming",
         img: "/images/about/Tak.jpeg",
       },
       {
@@ -45,7 +45,7 @@ export const About: AboutUs[] = [
         name: "พี่โชคดี",
         description:
           "นักศึกษาจุฬาลงกรณ์มหาวิทยาลัย คณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์เทคโนโลยีดิจิทัลและเทคโนโลยี",
-        role: "ติวเตอร์ Compettitive Programming",
+        role: "ติวเตอร์ Competitive Programming",
         img: "/images/about/Chokdee.png",
       },
       {
