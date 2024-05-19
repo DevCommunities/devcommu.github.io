@@ -345,9 +345,9 @@ export function FeedBackCard({ feedback, name, social, image }: FBPage) {
     >
       <div className=" mb-5 md:text-xl text-lg">{feedback}</div>
       <div className="flex space-x-6 items-center ">
-        <img src={image} className="h-20 w-20 rounded-full bg-primary" />
+        {/* <img src={image} className="h-20 w-20 rounded-full bg-primary" /> */}
         <div>
-          <div className="font-bold md:text-xl text-lg">{name}</div>
+          {/* <div className="font-bold md:text-xl text-lg">{name}</div> */}
           <div className="md:text-lg text-[#989DA5]">{social}</div>
         </div>
       </div>
