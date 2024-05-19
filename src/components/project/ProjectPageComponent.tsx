@@ -63,11 +63,12 @@ export function ProjectCard(props: {
     >
       <div
         className="h-full bg-cover bg-center bg-no-repeat rounded-3xl group"
-        style={{ backgroundImage: `url(${props.project.image})` }}
+        style={{ backgroundImage: `url(${props.project.images.vertical})` }}
       >
         {/* explanation card */}
         <a
-          href={`/project/${props.project.slug}`}
+          // TODO: Off Unfinished SLUG page, AS it's not ready
+          // href={`/project/${props.project.slug}`}
           className="group-hover:bg-opacity-90 group-hover:block h-full bg-accent-secondary bg-opacity-0 rounded-3xl trasition-all duration-500"
         >
           <div className="flex flex-col justify-center h-full p-5 opacity-0 group-hover:opacity-100 transition-all duration-500">
@@ -111,7 +112,10 @@ export interface SlideProjectProps {
   slug: string;
   title: string;
   description: string;
-  image: string;
+  images: {
+    horizontal: string;
+    vertical: string;
+  };
   type: string;
   date: string;
   month: string;
@@ -157,7 +161,9 @@ export function SlideProjectCard(props: { project: SlideProjectProps }) {
         <motion.div className="md:flex md:space-x-12 w md:max-w-full overflow-hidden  space-x-3 mb-10 snap-center">
           <div
             className=" md:h-56 md:w-[30rem] h-32 sm:h-52  w-full  rounded-lg bg-center bg-cover bg-no-repeat "
-            style={{ backgroundImage: `url(${props.project.image})` }}
+            style={{
+              backgroundImage: `url(${props.project.images.horizontal})`,
+            }}
           ></div>
           <div className="py-3">
             <h1 className="font-lineSansTH text-primary font-bold md:text-lg text-sm">
@@ -171,7 +177,7 @@ export function SlideProjectCard(props: { project: SlideProjectProps }) {
               {/* <a href={`/project/${Slug(props.project.slug)}`}> */}
               <a>
                 <div className="flex items-center space-x-3">
-                  <div className="h-4 w-3 bg-[url('/images/project/arrow.png')] bg-contain bg-center bg-no-repeat"></div>
+                  <div className="h-4 w-3 bg-[url('/images/works/utils/arrow.png')] bg-contain bg-center bg-no-repeat"></div>
                   <p className=" font-lineSansTH font-bold text-[17px]">
                     อ่านเพิ่มเติม
                   </p>
@@ -216,24 +222,9 @@ export function SlideBlackArea() {
           <div className="  md:min-w-[13%] ">
             <div className=" bg-[#616161] mx-auto w-1 h-screen md:left-24  rounded-full absolute">
               <motion.div className="h-full" style={{ y: slide }}>
-                <div className="bg-[#FF326C] h-3 w-3 rounded-full -mx-[0.23rem] z-50 absolute"></div>
-                {/* {SlideProjectList.map((project, index) => {
-                  return (
-                    <div key={index}>
-                      <p className=" font-lineSansTH font-bold text-lg -my-1 mx-5 absolute">
-                        {project.date}
-                      </p>
-                      <p className=" font-lineSansTH font-bold text-sm -mx-12 absolute">
-                        {project.year}
-                      </p>
-                      <p className=" font-lineSansTH font-bold text-sm my-7 mx-5 absolute">
-                        {project.month}
-                      </p>
-                    </div>
-                  );
-                })} */}
+                <div className="bg-primary h-3 w-3 rounded-full -mx-[0.23rem] z-50 absolute"></div>
                 <div className="pt-2">
-                  <div className="bg-[#FF326C] h-10"></div>
+                  <div className="bg-primary h-10"></div>
                 </div>
               </motion.div>
             </div>
