@@ -167,7 +167,9 @@ export function SlideProjectCard(props: { project: SlideProjectProps }) {
               {props.project.title}
             </h1>
             <button className="h-8 min-w-24 px-4 bg-[#334155] md:mt-7 mt-2 rounded-full transition-colors hover:bg-[#475d78]">
-              <a href={`/project/${Slug(props.project.slug)}`}>
+              {/* TODO: Off Unfinished SLUG page */}
+              {/* <a href={`/project/${Slug(props.project.slug)}`}> */}
+              <a>
                 <div className="flex items-center space-x-3">
                   <div className="h-4 w-3 bg-[url('/images/project/arrow.png')] bg-contain bg-center bg-no-repeat"></div>
                   <p className=" font-lineSansTH font-bold text-[17px]">
