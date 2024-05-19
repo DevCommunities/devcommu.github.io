@@ -130,30 +130,28 @@ export function MaskEffectDevCommu() {
   return (
     <MaskContainer
       revealText={
-        <p className="max-w-4xl mx-auto h-20 w-52 bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain bg-no-repeat  text-4xl font-bold"></p>
+        <img
+          src="/images/branding/DarkSideDevCommu.png"
+          alt="logo"
+          className="h-1/2"
+        />
       }
-      className="h-[40rem] hidden md:block"
+      className="h-[40rem] md:block"
     >
-      <div className=" w-[800px] h-52 bg-[url('/images/about/bg_word.png')] bg-center bg-cover bg-no-repeat">
-        <p className=" max-w-4xl my-32 mx-auto h-20 w-52 bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain bg-no-repeat  text-4xl font-bold"></p>
+      <div className="w-full h-52 bg-[url('/images/about/bg_word.png')] bg-center bg-cover bg-no-repeat">
+        <Quote />
       </div>
     </MaskContainer>
   );
 }
 
-export function TextDetail() {
+export function Quote() {
   return (
-    <div className="md:w-[60%] mx-auto">
-      <p className=" font-lineSansTH md:text-xl text-sm    font-bold text-center">
-        DevCommu ถูกก่อตั้งขึ้น ด้วยจุดประสงค์ ที่จะมอบและส่งต่อความรู้
-        ส่งต่อโอกาส ในด้านเทคโนโลยี และการเขียนโปรแกรม ให้กับนักเรียน
-        โดยมีจุดมุ่งหมายที่จะเป็นเหมือน FreeCodeCamp ที่มีเนื้อหาที่ดี
-        และมีคุณภาพ แต่เข้าถึงได้ง่ายสำหรับเด็กที่ไม่ได้เก่งภาษาอังกฤษ
-        โดยไม่มีค่าใช้จ่ายใดๆทั้งสิ้นรวมทั้งเป็นสังคม เป็นพื้นที่
-        สำหรับผู้ที่รักในการแบ่งปันความรู้ และการเรียนรู้ รวมถึงทำโปรเจ็คสนุกๆ
-        ผ่านการทำเนื้อหาบน YouTube ร่วมกับผู้เชี่ยวชาญ
-        จัดค่ายร่วมกับโรงเรียนและค่ายอื่นๆทำโปรเจ็คร่วมกันกับสมาชิก
-        และไปแข่งขันกระชับมิตร
+    <div className="md:w-full w-full mx-auto mt-10">
+      <p className="font-lineSansTH md:text-5xl text-sm font-bold text-center">
+        "Simplify
+        <span className="text-primary"> Learning</span>, Amplify
+        <span className="text-primary"> Building</span>"
       </p>
     </div>
   );
@@ -187,6 +185,19 @@ export function PeopleCard(props: { people: AboutUs }) {
         </motion.div>
       ))}
     </section>
+  );
+}
+
+export function OurMission() {
+  return (
+    <div className="md:w-full w-full mx-auto mt-10">
+      <p className="font-lineSansTH md:text-5xl text-sm font-bold text-center">
+        Our Mission
+      </p>
+      <p className="font-lineSansTH md:text-2xl text-sm font-bold text-center">
+        "Simplify Learning, Amplify Building"
+      </p>
+    </div>
   );
 }
 

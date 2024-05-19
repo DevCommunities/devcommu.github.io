@@ -1,6 +1,14 @@
 import { type SlideProjectProps } from "~/components/project/ProjectPageComponent";
 import { type AboutUs } from "~/components/about/AboutUsPageComponent";
 import { type DetailProps } from "~/components/homepage/HomePageComponent";
+import type { NavData } from "./data.type";
+
+export const navdata: NavData[] = [
+  { title: "หน้าหลัก", href: "/" },
+  { title: "โครงการ", href: "/project" },
+  // { title: "ความรู้", href: "/learning" },
+  { title: "เกี่ยวกับเรา", href: "/about", low_priority: false },
+];
 
 export const About: AboutUs[] = [
   {
@@ -874,13 +882,14 @@ export const SlideProjectList: SlideProjectProps[] = [
   },
 ];
 
+// --------- Course Data ------------
 export const posterData = [
-  { img: "/images/homepage/poster/poster0.png" },
+  // { img: "/images/homepage/poster/poster0.png" }, // We Off Poster that shown the price
   { img: "/images/homepage/poster/poster1.png" },
   { img: "/images/homepage/poster/poster2.png" },
   { img: "/images/homepage/poster/poster3.png" },
-  { img: "/images/homepage/poster/poster4.png" },
-  { img: "/images/homepage/poster/poster5.png" },
+  // { img: "/images/homepage/poster/poster4.png" },
+  // { img: "/images/homepage/poster/poster5.png" },
   { img: "/images/homepage/poster/poster6.png" },
   { img: "/images/homepage/poster/poster7.png" },
 ];

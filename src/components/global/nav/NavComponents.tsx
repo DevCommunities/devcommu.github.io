@@ -1,18 +1,5 @@
 import React from "react";
-import { useState } from "react";
-
-type Data = {
-  title: String;
-  href: String; //incase using href
-  low_priority?: boolean; // will not show in nav list on very small screen
-}[];
-
-const data: Data = [
-  { title: "หน้าหลัก", href: "/" },
-  { title: "โครงการ", href: "/project" },
-  { title: "ความรู้", href: "/learning" },
-  { title: "เกี่ยวกับเรา", href: "/about", low_priority: true },
-];
+import { navdata } from "~/data/data";
 
 export default function NavContainer({
   children,
@@ -52,7 +39,7 @@ export function NavListContainer({
       {/* disabled if it's really too small to fix anything */}
       <div className="space-x-1 bg-[#E2E8F0] rounded-full px-1 xs:px-2 py-1 flex items-center">
         {/* Assuming you want these to be links */}
-        {data.map((item, idx) => (
+        {navdata.map((item, idx) => (
           <a
             key={idx}
             href={item.href.toString()}
