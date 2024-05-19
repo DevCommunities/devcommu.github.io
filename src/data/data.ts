@@ -6,6 +6,24 @@ export const About: AboutUs[] = [
   {
     people: [
       {
+        name: "พี่แท็ค",
+        description:
+          "นักศึกษาจุฬาลงกรณ์มหาวิทยาลัย คณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์เทคโนโลยีดิจิทัลและเทคโนโลยี",
+        role: "ติวเตอร์ Competitive Programming",
+        img: "/images/about/Tak.jpeg",
+      },
+      {
+        name: "พี่โชคดี",
+        description:
+          "นักศึกษาจุฬาลงกรณ์มหาวิทยาลัย คณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์เทคโนโลยีดิจิทัลและเทคโนโลยี",
+        role: "ติวเตอร์ Competitive Programming",
+        img: "/images/about/Chokdee.png",
+      },
+    ],
+  },
+  {
+    people: [
+      {
         name: "พี่ไกด์",
         description:
           "นักศึกษาจุฬาลงกรณ์มหาวิทยาลัย คณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์เทคโนโลยีดิจิทัลและเทคโนโลยี",
@@ -16,7 +34,7 @@ export const About: AboutUs[] = [
         name: "พี่หมูกรอบ",
         description:
           "นักศึกษาจุฬาลงกรณ์มหาวิทยาลัย คณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์เทคโนโลยีดิจิทัลและเทคโนโลยี",
-        role: "จัดการ และติวเตอร์ Python & MachineLearning",
+        role: "ผู้จัดการ และติวเตอร์ Python & MachineLearning",
         img: "/images/about/Mookrob.jpeg",
       },
     ],
@@ -24,35 +42,11 @@ export const About: AboutUs[] = [
   {
     people: [
       {
-        name: "พี่แท็ค",
-        description:
-          "นักศึกษาจุฬาลงกรณ์มหาวิทยาลัย คณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์เทคโนโลยีดิจิทัลและเทคโนโลยี",
-        role: "ติวเตอร์ Competitive Programming",
-        img: "/images/about/Tak.jpeg",
-      },
-      {
         name: "พี่ธาร",
         description:
           "นักศึกษาจุฬาลงกรณ์มหาวิทยาลัย คณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์เทคโนโลยีดิจิทัลและเทคโนโลยี",
         role: "หัวหน้าฝ่ายสื่อและการโฆษณา และติวเตอร์ IOS App Development",
         img: "/images/about/Tan.jpeg",
-      },
-    ],
-  },
-  {
-    people: [
-      {
-        name: "พี่โชคดี",
-        description:
-          "นักศึกษาจุฬาลงกรณ์มหาวิทยาลัย คณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์เทคโนโลยีดิจิทัลและเทคโนโลยี",
-        role: "ติวเตอร์ Competitive Programming",
-        img: "/images/about/Chokdee.png",
-      },
-      {
-        name: "",
-        description: "",
-        role: "",
-        img: "",
       },
     ],
   },
@@ -893,31 +887,31 @@ export const posterData = [
 
 export const MoreDetailList: DetailProps[] = [
   {
-    title: "เริ่มสงสัยในปัญหา",
+    title: "วางแผนและคิดอย่างเป็นระบบ",
     description:
-      "เจอปัญหาที่อยากแก้แต่ไม่รู้จะทำยังไงดี เริ่มคิดไตร่ตรองกับปัญหานั้นๆ และรู้สึกอยากแก้ปัญหานั้น",
+      "กระตุ้นให้นักเรียนคิดวิเคราะห์และวางแผนการทำงาน เพื่อพัฒนาทักษะการแก้ปัญหาอย่างมีประสิทธิภาพ",
     image: "/images/homepageStand1.png",
-    title2: "ตามความสนใจ",
+    title2: "Thinking and Planning",
   },
   {
-    title: "คิดไอเดีย",
+    title: "ค้นคว้าและเรียนรู้",
     description:
-      "เริ่มค้นหาหนทางและไอเดียสำหรับการแก้ปัญหานั้นๆ คิดทบทวนไปมาและสุดท้าย คิดไอเดียออก",
+      "ให้นักเรียนหาข้อมูลและเรียนรู้เกี่ยวกับโครงการที่ต้องการทำ ฝึกการวิจัยและการเรียนรู้อย่างลึกซึ้ง",
     image: "/images/homepageStand2.png",
-    title2: "ตามความสนใจ",
+    title2: "Research and Learning",
   },
   {
-    title: "เรียนและพัฒนา",
+    title: "ลงมือทำและพัฒนา",
     description:
-      "ทดลองเรียนรู้ความรู้ที่จำเป็น ทดลองแก้ปัญหาต่างๆ เพื่อหาหนทางแก้ปัญหาให้สำเร็จ",
+      "ให้นักเรียนลงมือปฏิบัติและพัฒนาผลงานของตนเอง ฝึกการทำงานเป็นขั้นตอนและการแก้ปัญหาที่เกิดขึ้น",
     image: "/images/homepageStand3.png",
-    title2: "ตามความสนใจ",
+    title2: "Implementation and Development",
   },
   {
     title: "สร้างสรรค์ผลงาน",
     description:
       "ผ่านการฝึกฝนและทดลองต่างๆ จนสร้างขึ้นมาเป็นผลงานหรือวิธีการแก้ปัญหาที่ถูกต้องและพัฒนาผลงานชิ้นใหม่ของตัวเอง",
     image: "/images/homepageStand4.png",
-    title2: "ตามความสนใจ",
+    title2: "Create and Innovate",
   },
 ];
