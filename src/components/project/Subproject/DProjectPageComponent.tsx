@@ -13,7 +13,7 @@ export default function HomePageContainer(props: {
         <div className=" h-4 max-w-80 bg-no-repeat mb-6 mx-auto bg-[url('/images/DarkDevCommuWord.png')] bg-center bg-contain"></div>
         <div
           className=" md:h-[70vh] h-32 w-full bg-cover rounded-lg bg-center bg-no-repeat my-5"
-          style={{ backgroundImage: `url(${props.project.image})` }}
+          style={{ backgroundImage: `url(${props.project.images.horizontal})` }}
         ></div>
         <div className=" font-bold font-lineSansTH_XB md:text-3xl text-xl text-start">
           {props.project.title}
