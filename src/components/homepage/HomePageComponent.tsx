@@ -221,7 +221,7 @@ const DataFB: FBPage[] = [
   {
     feedback: '"สนุกที่ได้สร้างรถ และ พี่ๆ ta คอยให้ความช่วยเหลือเป็นอย่างดี"',
     name: "ทันรวี คำแหงพล",
-    social: "นักเรียนในโครงการค่าย Arduino Ar Bootcamp",
+    social: "นักเรียนในโครงการค่าย Arduino RC camp",
     image: "/reviews/0.png",
   },
   {
