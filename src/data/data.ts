@@ -725,8 +725,8 @@ export const SlideProjectList: SlideProjectProps[] = [
     title: "Machine Learning Bootcamp | Intro to Image Processing",
     type: "DATA BOOTCAMP",
     images: {
-      horizontal: "/images/works/camps/008_arduino_rc_camp/thumbnail/horizon.webp",
-      vertical: "/images/works/camps/008_arduino_rc_camp/thumbnail/vertical.webp",
+      horizontal: "/images/works/camps/009_intro_to_image_processing/thumbnail/horizon.webp",
+      vertical: "/images/works/camps/009_intro_to_image_processing/thumbnail/vertical.webp",
     },
     description:
       "ค่าย Machine Learning สายภาพ น้องได้เรียนรู้ทักษะเขียนโปรแกรมพื้นฐาน และได้นำไปใช้ในการเรียนรู้ด้าน Image Processing และ Computer Vision และได้ทำโปรเจค Machine Learning เจ๋งไเป็นของตัวเองอีกด้วย",
@@ -819,8 +819,8 @@ export const SlideProjectList: SlideProjectProps[] = [
     title: "Arduino Bootcamp | Let’s Build a car",
     type: "PYTHON BOOTCAMP",
     images: {
-      horizontal: "/images/works/camps/003_ai_boot_camp/thumbnail/horizon.webp",
-      vertical: "/images/works/camps/003_ai_boot_camp/thumbnail/vertical.webp",
+      horizontal: "/images/works/camps/008_arduino_rc_camp/thumbnail/horizon.webp",
+      vertical: "/images/works/camps/008_arduino_rc_camp/thumbnail/vertical.webp",
     },
     description:
       "ค่ายอุปกรณ์ Arduino โดยในรอบนี้เรามาในหัวข้อพิเศษ Let’s build a car ซึ่งเราจะมาโฟกัสกันที่การใช้อุปกรณ์ต่างทั้ง Arduino และอื่นเพื่อใช้ในการสร้างรถบังคับผ่าน มือถือขึ้นมา โดยน้องๆ สามารถที่จะสร้างสรรค์รถสไตล์พิเศษแบบที่ไม่เหมือนใครได้เลย!",
