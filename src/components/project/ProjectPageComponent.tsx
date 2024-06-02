@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import Marquee from "react-fast-marquee";
 import { SlideProjectList } from "~/data/data";
 import Footer from "./Footer";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 interface ProjectPageComponentProps {
   text1: string;
@@ -196,14 +196,8 @@ export function SlideProjectCard(props: { project: SlideProjectProps }) {
 }
 
 export function SlideBlackArea() {
-  const ref = useRef(null);
+  const { scrollYProgress } = useScroll();
 
-  const { scrollYProgress } = useScroll({
-    container: ref,
-    offset: ["start start", "end end"],
-  });
-  const slide = useTransform(scrollYProgress, [0, 1], ["0%", "95%"]);
-  // console.log("scroolYProgress", scrollYProgress);
   return (
     <div className="z-40 relative text-white">
       <div className="z-[400]">
@@ -218,22 +212,26 @@ export function SlideBlackArea() {
             </div>
           </div>
         </section>
-        <section
-          ref={ref}
-          style={{ scrollbarWidth: "none" }}
-          className="bg-[#1E1E1E] flex space-x-10 p-10 snap-y overflow-y-scroll max-h-screen snap-mandatory"
-        >
-          <div className="  md:min-w-[13%] ">
-            <div className=" bg-[#616161] mx-auto w-1 h-screen md:left-24  rounded-full absolute">
-              <motion.div className="h-full" style={{ y: slide }}>
-                <div className="bg-primary h-3 w-3 rounded-full -mx-[0.23rem] z-50 absolute"></div>
+        <section className="bg-[#1E1E1E] flex overflow-x-auto overflow-y-hidden">
+          {/* scrolling bar */}
+          <div className="w-1/6 relative">
+            <div className="bg-[#616161] mx-auto w-1 h-full md:left-24 rounded-full absolute">
+              {/* scale Y scroll */}
+              {/* <motion.div
+                className="h-full"
+                // position scale based on scroll and make it scaled (since the scroll bar isn't scaled)
+                style={{
+                  scaleY: useTransform(scrollYProgress, [0, 1], [0, 1]),
+                }}
+              >
+                <div className="bg-primary h-3 w-3 rounded-sm -mx-[0.23rem] z-50 absolute"></div>
                 <div className="pt-2">
                   <div className="bg-primary h-10"></div>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
-          <div className=" w-full p-10 h-[100vh] text-start ">
+          <div className="w-full p-10 text-start">
             {SlideProjectList.map((project, index) => {
               return (
                 <SlideProjectCard
