@@ -58,15 +58,16 @@ export default function HomePageContainer({ text1, text2, text3 }: Text) {
 export function VideoExample() {
   return (
     <section className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 lg:my-4 md:mx-auto rounded-xl flex flex-col items-center justify-center">
-      <iframe
-        width="100%"
-        src="https://www.youtube.com/embed/rVpOLKC47aA?si=BE_O4EPijalJKa5G"
-        title="YouTube video player"
-        className="rounded-xl h-64 md:h-96 w-full "
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      ></iframe>
+      <div className="relative w-full pb-[56.25%]">
+        <iframe
+          src="https://www.youtube.com/embed/rVpOLKC47aA?si=BE_O4EPijalJKa5G"
+          title="YouTube video player"
+          className="absolute top-0 left-0 w-full h-full rounded-xl"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+      </div>
     </section>
   );
 }
