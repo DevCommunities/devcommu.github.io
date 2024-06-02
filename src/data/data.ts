@@ -629,7 +629,7 @@ export const SlideProjectList: SlideProjectProps[] = [
   {
     slug: "dev7",
     title: "GameDev Bootcamp",
-    type: "AI BOOTCAMP",
+    type: "GameDev BOOTCAMP",
     images: {
       horizontal: "/images/works/camps/007_godot_gamedev_camp/thumbnail/horizon.webp",
       vertical: "/images/works/camps/007_godot_gamedev_camp/thumbnail/vertical.webp",
