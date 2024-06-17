@@ -36,14 +36,14 @@ export const About: AboutUs[] = [
         name: "พี่ไกด์",
         description:
           "นักศึกษาจุฬาลงกรณ์มหาวิทยาลัย คณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์เทคโนโลยีดิจิทัลและเทคโนโลยี",
-        role: "ผู้จัดการ และติวเตอร์ Python & MachineLearning",
+        role: "กรรมการบริหาร และติวเตอร์ Python & MachineLearning",
         img: "/images/about/Guide.png",
       },
       {
         name: "พี่หมูกรอบ",
         description:
           "นักศึกษาจุฬาลงกรณ์มหาวิทยาลัย คณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์เทคโนโลยีดิจิทัลและเทคโนโลยี",
-        role: "ผู้จัดการ และติวเตอร์ Python & MachineLearning",
+        role: "กรรมการบริหาร และติวเตอร์ Python & MachineLearning",
         img: "/images/about/Mookrob.jpeg",
       },
     ],
